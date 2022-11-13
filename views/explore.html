@@ -19,126 +19,65 @@
     <!-- custom css file link  -->
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/explore.css">
+    <link rel="stylesheet" href="../css/accordion.css">
 
 </head>
 
 <body>
 
     <header class="header">
-            
-            <div class="header-1">
-                
-                <a href="#" class="hamburgerMenu"><i class="fas fa-bars"></i></a>
-                
-                <a href="#" class="logo"> <i class="fas fa-book"></i> bookly </a>
-                
-                <form action="" class="search-form">
-                    <input type="search" name="" placeholder="search here..." id="search-box">
-                    <label for="search-box" class="fas fa-search"></label>
-                </form>
-                
-                <div class="icons">
-                    <div id="search-btn" class="fas fa-search"></div>
-                    <a href="#" class="fas fa-heart"></a>
-                    <a href="#" class="fas fa-shopping-cart"></a>
-                    <div id="login-btn" class="fas fa-user"></div>
-                </div>
-                
-            </div>
-            
-            <div class="header-2">
-                <nav class="navbar">
-                    <a href="#home">home</a>
-                    <a href="#featured">featured</a>
-                    <a href="#arrivals">arrivals</a>
-                    <a href="#reviews">reviews</a>
-                    <a href="#blogs">blogs</a>
-                </nav>
-            </div>
-            
-        </header>
 
-    <div class="explore-field container">
-        <div class="row mx-auto">
-            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-5 col-xs-sm-6 py-4">
-                <div class="explore-item p-4" id="book1">
-                    <!--TODO refactor so that it can read json files or something-->
-                    <img src="../image/book-1.png" alt="">
-                    <h1>Book Title</h1>
-                    <h3>Book Author</h3>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
-                    <button>Add to cart</button>
-                </div>
+        <div class="header-1">
+
+            <a href="#" class="hamburgerMenu"><i class="fas fa-bars"></i></a>
+
+            <a href="#" class="logo"> <i class="fas fa-book"></i> bookly </a>
+
+            <form action="" class="search-form">
+                <input type="search" name="" placeholder="search here..." id="search-box">
+                <label for="search-box" class="fas fa-search"></label>
+            </form>
+
+            <div class="icons">
+                <div id="search-btn" class="fas fa-search"></div>
+                <a href="#" class="fas fa-heart"></a>
+                <a href="#" class="fas fa-shopping-cart"></a>
+                <div id="login-btn" class="fas fa-user"></div>
             </div>
-            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-5 col-xs-sm-6 py-4">
-                <div class="explore-item p-4" id="book2">
-                    <!--TODO refactor so that it can read json files or something-->
-                    <img src="../image/book-1.png" alt="">
-                    <h1>Book Title</h1>
-                    <h3>Book Author</h3>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
-                    <button>Add to cart</button>
-                </div>
-            </div>
-            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-5 col-xs-sm-6 py-4">
-                <div class="explore-item p-4" id="book3">
-                    <!--TODO refactor so that it can read json files or something-->
-                    <img src="../image/book-1.png" alt="">
-                    <h1>Book Title</h1>
-                    <h3>Book Author</h3>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
-                    <button>Add to cart</button>
-                </div>
-            </div>
-            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-5 col-xs-sm-6 py-4">
-                <div class="explore-item p-4" id="book3">
-                    <!--TODO refactor so that it can read json files or something-->
-                    <img src="../image/book-1.png" alt="">
-                    <h1>Book Title</h1>
-                    <h3>Book Author</h3>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
-                    <button>Add to cart</button>
-                </div>
-            </div>
-            <!--...and so on-->
+
         </div>
 
-        <!-- <div class="row mx-md-n5">
-            <div class="col px-md-5">
-                <div class="p-3 border bg-light">Custom column padding</div>
-            </div>
-            <div class="col px-md-5">
-                <div class="p-3 border bg-light">Custom column padding</div>
-            </div>
-        </div> -->
+        <div class="header-2">
+            <nav class="navbar">
+                <a href="#home">home</a>
+                <a href="#featured">featured</a>
+                <a href="#arrivals">arrivals</a>
+                <a href="#reviews">reviews</a>
+                <a href="#blogs">blogs</a>
+            </nav>
+        </div>
 
+    </header>
+
+    <div class="filters">
+        <h2 class="filterTitle">Filter by...</h2>
+        <button class="accordion" id="ByCourse">Course</button>
+        <div class="panel" id="CourseListFilters"></div>
+        <button class="accordion" id="Faculty">Faculty</button>
+        <div class="panel" id="FacultyListFilters"></div>
+        <button class="accordion" id="DateAdded">Date Added</button>
+        <div class="panel" id="DateAddedListFilters"></div>
+        <button class="accordion" id="SellerRating">Seller Rating</button>
+        <div class="panel" id="SellerRatingListFilters"></div>
+    </div>
+
+    <div class="explore-field container">
+        <div class="row mx-auto" id="itemTemplate">
+        </div>
+    </div>
 
         <!-- Header: TODO separate into a component -->
-        
+
         <!-- Footer: TODO separate into a component -->
         <!-- <section class="footer">
             
@@ -193,17 +132,19 @@
             <div class="credit"> created by <span>mr. web designer</span> | all rights reserved! </div>
             
         </section> -->
-    </div>
-    <!-- Bootstrap stuff-->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
+        <!-- Bootstrap stuff-->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="../js/accordion.js"></script>
+        <script src="../js/explore.js"></script>
 </body>
 
 </html>
