@@ -1,84 +1,93 @@
 @import url(style.css);
 
 div.explore-field {
-    color:var(--light-color);
-    max-width: 70%;
+    color: var(--light-color);
+    max-width: 100%;
     float: right;
+    /* position: relative; */
 }
 
 div.explore-item {
-    border:var(--border);
+    border: var(--border);
     text-align: center;
     color: green;
 }
+
 div.explore-item img {
     max-height: auto;
     max-width: 80%;
 }
-div.explore-item h1{
-    color:var(--black);
+
+div.explore-item h1 {
+    color: var(--black);
 }
-div.explore-item h3{
-    color:var(--black);
+
+div.explore-item h3 {
+    color: var(--black);
 
 }
+
 div.explore-item div.stars {
     font-size: small;
 }
-div.explore-item i{
+
+div.explore-item i {
     color: gold;
 }
-div.explore-item button{
+
+div.explore-item button {
     background-color: lightgoldenrodyellow;
     width: 100%;
-    height:10%;
-    border:var(--border);
+    height: 10%;
+    border: var(--border);
     border-radius: 1rem;
     font-size: medium;
 }
+
 div.explore-item button:hover {
     background-color: rgb(255, 227, 72);
-    border-color:black;
+    border-color: black;
     border-width: 0.1rem;
 }
-div.explore-item button:active
-{
+
+div.explore-item button:active {
     outline-color: black;
     outline-width: 0.125rem;
 }
-div.explore-item button:focus{
+
+div.explore-item button:focus {
     outline-color: black;
     outline-width: 0.05rem;
 }
 
-
-
-
-
-
-/* .explore-item .box{
-    border:var(--border);
-    padding:2rem;
-    text-align: center;
-    margin:2rem 0;
-}
-.explore-item .rating .box {
-
+div.sorters {
+    float: right;
+    display: flex;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    /* position: relative; */
 }
 
-.explore-item .reviews-slider .box:hover{
-    border:var(--border-hover);
+div.sorter-dropdown {
+    float: right;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
 }
 
-.explore-item .reviews-slider .box img{
-    height:7rem;
-    width:7rem;
-    border-radius: 50%;
-    object-fit: cover;
+div.sorter-dropdown-menu {
+    width: 96%;
 }
 
-.explore-item .reviews-slider .box h3{
-    color:var(--black);
-    font-size: 2.2rem;
-    padding:.5rem 0;
-} */
+div.sorters-and-explore-field {
+    float: right;
+    max-width: 70%;
+}
+
+.hide-item-details {
+    display: none;
+}
+
+.item-details:hover+.hide-item-details {
+    display: block;
+    color: red;
+}

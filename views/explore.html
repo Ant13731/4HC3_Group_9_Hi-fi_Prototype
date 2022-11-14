@@ -70,11 +70,34 @@
         <button class="accordion" id="SellerRating">Seller Rating</button>
         <div class="panel" id="SellerRatingListFilters"></div>
     </div>
+    <div class="sorters-and-explore-field">
+    <div class="sorters">
+        <div class="dropdown sorter-dropdown">
+            <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButtonShow" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Show...
+            </button>
+            <div class="dropdown-menu sorter-dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <button class="dropdown-item" id="show10Items">Show 10 Items</button>
+                <button class="dropdown-item" id="show20Items">Show 20 Items</button>
+                <button class="dropdown-item" id="show50Items">Show 50 Items</button>
+                <button class="dropdown-item" id="show100Items">Show 100 Items</button>
+            </div>
+        </div>
+        <div class="dropdown sorter-dropdown">
+            <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButtonSortBy" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Sort by...
+            </button>
+            <div class="dropdown-menu sorter-dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <button class="dropdown-item" id="rateAscending">Rating Ascending <i class="fas fa-arrow-up"></i></button>
+                <button class="dropdown-item" id="rateDescending">Rating Descending <i class="fas fa-arrow-down"></i></button>
+            </div>
+        </div>
+    </div>
 
     <div class="explore-field container">
         <div class="row mx-auto" id="itemTemplate">
         </div>
-    </div>
+    </div></div>
 
         <!-- Header: TODO separate into a component -->
 

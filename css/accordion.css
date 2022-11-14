@@ -52,8 +52,7 @@ div.filters {
     width: 27.5%;
     float: left;
     padding-left: 2.5%;
-    padding-top: 2.5%;
-    position: fixed;
+    padding-top: 10%;
 }
 
 div.filters h2 {

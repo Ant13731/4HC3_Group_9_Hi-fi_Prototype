@@ -75,7 +75,7 @@ sellerRatingList = [
 filterSearchForm = `<div style="padding-left:2.5%">
                     <form action="" class="filter-search-form" id="courseFilter">
                         <label for="search-box" class="fas fa-search"></label>
-                        <input type="search" name="course" placeholder="COURSE 1234" id="search-box">
+                        <input type="search" name="course" placeholder="Search courses" id="search-box">
                     </form></div`;
 
 function updateFilterResults(searchString) {
