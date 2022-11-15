@@ -19,172 +19,61 @@ function getRatingHTML(rating) {
 
     return stars;
 }
-class ItemListElement {
-    constructor(image, title, rating) {
+// class ItemListElement {
+//     constructor(image, title, rating) {
+//         this.title = title;
+//         this.image = image;
+//         this.rating = rating;
+//     }
+//     getHTML() {
+//         return `<div class="col-xl-3 col-lg-3 col-md-4 col-sm-5 col-xs-sm-6 py-4">
+//                     <div class="explore-item p-4">
+//                         <img src="${this.image}" alt="">
+//                         <h1>${this.title}</h1>
+//                         <div class="stars">
+//                             ${getRatingHTML(this.rating)}
+//                         </div>
+//                         <button>Add to cart</button>
+//                     </div>
+//                 </div>`
+//     }
+// }
+// class BookListElement extends ItemListElement {
+    class BookListElement {
+    constructor(image, title, rating, author) {
+        // super(image, title, rating);
+        this.author = author;
         this.title = title;
         this.image = image;
         this.rating = rating;
     }
     getHTML() {
-        return `<div class="col-xl-3 col-lg-3 col-md-4 col-sm-5 col-xs-sm-6 py-4">
-                    <div class="explore-item p-4">
-                        <img src="${this.image}" alt="">
-                        <h1>${this.title}</h1>
-                        <div class="stars">
-                            ${getRatingHTML(this.rating)}
-                        </div>
-                        <button>Add to cart</button>
-                    </div>
-                </div>`
-    }
-}
-class BookListElement extends ItemListElement {
-    constructor(image, title, rating, author) {
-        super(image, title, rating);
-        this.author = author;
-    }
-    getHTML() {
-        return `<div class="col-xl-3 col-lg-3 col-md-4 col-sm-5 col-xs-sm-6 py-4">
+        return `<div class="col-xl-3 col-lg-3 col-md-4 col-sm-5 col-xs-sm-6 py-4 explore-item-parent">
                     <div class="explore-item p-4 item-details">
-                        <img src="${this.image}" alt="">
+                        <img src="${this.image}" alt="" class="explore-item-image">
                         <h1>${this.title}</h1>
                         <h3>${this.author}</h3>
                         <div class="stars">
                             ${getRatingHTML(this.rating)}
                         </div>
-                        <button>Add to cart</button>
+                        <button class="explore-item-button">Add to cart</button>
+                    </div>
+                    <div class="hide-item-details">
+                            <img src="${this.image}" alt="">
+                            <h1>${this.title}</h1>
+                            <h3>${this.author}</h3>
+                            <div class="stars">
+                                ${getRatingHTML(this.rating)}
+                            </div>
+                            <button class="explore-item-button">Add to cart</button>
+                        Hello World
                     </div>
                 </div>`
+                
     }
 }
 
-courses = [
-    "ABLD",
-    "ANTHROP",
-    "ARABIC",
-    "ART",
-    "ARTHIST",
-    "ARTSSCI",
-    "ASTRON",
-    "AUTOTECH",
-    "BIOCHEM",
-    "BIOLOGY",
-    "BIOMEDDC",
-    "BIOPHYS",
-    "BIOSAFE",
-    "BIOTECH",
-    "CAYUGA",
-    "CHEM",
-    "CHEMBIO",
-    "CHEMBME",
-    "CHEMENG",
-    "CHINESE",
-    "CIVBME",
-    "CIVENG",
-    "CIVTECH",
-    "CLASSICS",
-    "CMST",
-    "CMTYENGA",
-    "COLLAB",
-    "COMMERCE",
-    "COMPENG",
-    "COMPSCI",
-    "DATASCI",
-    "EARTHSC",
-    "ECON",
-    "ELECBME",
-    "ELECENG",
-    "ENGINEER",
-    "ENGLISH",
-    "ENGNMGT",
-    "ENGPHYS",
-    "ENGSOCTY",
-    "ENGTECH",
-    "ENRTECH",
-    "ENVIRSC",
-    "ENVSOCTY",
-    "EPHYSBME",
-    "EXPLORE",
-    "FARSI",
-    "FRENCH",
-    "GENDRST",
-    "GENTECH",
-    "GERMAN",
-    "GLOBALZN",
-    "GREEK",
-    "HEBREW",
-    "HISTORY",
-    "HLTHAGE",
-    "HTHSCI",
-    "HUMAN",
-    "HUMBEHV",
-    "IARTS",
-    "IBEHS",
-    "IBH",
-    "INDIGST",
-    "INNOVATE",
-    "INSPIRE",
-    "INTENG",
-    "ISCI",
-    "ITALIAN",
-    "JAPANESE",
-    "KINESIOL",
-    "KOREAN",
-    "LABRST",
-    "LATAM",
-    "LATIN",
-    "LIFESCI",
-    "LINGUIST",
-    "MANTECH",
-    "MATH",
-    "MATLS",
-    "MATLSBME",
-    "MECHBME",
-    "MECHENG",
-    "MECHTRON",
-    "MEDIAART",
-    "MEDPHYS",
-    "MEDRADSC",
-    "MELD",
-    "MIDWIF",
-    "MOHAWK",
-    "MOLBIOL",
-    "MUSIC",
-    "MUSICCOG",
-    "NEUROSCI",
-    "NURSING",
-    "OJIBWE",
-    "PEACJUST",
-    "PHARMAC",
-    "PHILOS",
-    "PHYSICS",
-    "PNB",
-    "POLISH",
-    "POLSCI",
-    "PROCTECH",
-    "PSYCH",
-    "RUSSIAN",
-    "SANSKRIT",
-    "SCAR",
-    "SCICOMM",
-    "SCIENCE",
-    "SEP",
-    "SFGNTECH",
-    "SFWRBME",
-    "SFWRENG",
-    "SFWRTECH",
-    "SMRTTECH",
-    "SOCIOL",
-    "SOCPSY",
-    "SOCSCI",
-    "SOCWORK",
-    "SPANISH",
-    "STATS",
-    "SUSTAIN",
-    "THTRFLM",
-    "TRONBME",
-    "WHMIS",
-    "WORKLABR"
+courses = [ "ABLD", "ANTHROP", "ARABIC", "ART", "ARTHIST", "ARTSSCI", "ASTRON", "AUTOTECH", "BIOCHEM", "BIOLOGY", "BIOMEDDC", "BIOPHYS", "BIOSAFE", "BIOTECH", "CAYUGA", "CHEM", "CHEMBIO", "CHEMBME", "CHEMENG", "CHINESE", "CIVBME", "CIVENG", "CIVTECH", "CLASSICS", "CMST", "CMTYENGA", "COLLAB", "COMMERCE", "COMPENG", "COMPSCI", "DATASCI", "EARTHSC", "ECON", "ELECBME", "ELECENG", "ENGINEER", "ENGLISH", "ENGNMGT", "ENGPHYS", "ENGSOCTY", "ENGTECH", "ENRTECH", "ENVIRSC", "ENVSOCTY", "EPHYSBME", "EXPLORE", "FARSI", "FRENCH", "GENDRST", "GENTECH", "GERMAN", "GLOBALZN", "GREEK", "HEBREW", "HISTORY", "HLTHAGE", "HTHSCI", "HUMAN", "HUMBEHV", "IARTS", "IBEHS", "IBH", "INDIGST", "INNOVATE", "INSPIRE", "INTENG", "ISCI", "ITALIAN", "JAPANESE", "KINESIOL", "KOREAN", "LABRST", "LATAM", "LATIN", "LIFESCI", "LINGUIST", "MANTECH", "MATH", "MATLS", "MATLSBME", "MECHBME", "MECHENG", "MECHTRON", "MEDIAART", "MEDPHYS", "MEDRADSC", "MELD", "MIDWIF", "MOHAWK", "MOLBIOL", "MUSIC", "MUSICCOG", "NEUROSCI", "NURSING", "OJIBWE", "PEACJUST", "PHARMAC", "PHILOS", "PHYSICS", "PNB", "POLISH", "POLSCI", "PROCTECH", "PSYCH", "RUSSIAN", "SANSKRIT", "SCAR", "SCICOMM", "SCIENCE", "SEP", "SFGNTECH", "SFWRBME", "SFWRENG", "SFWRTECH", "SMRTTECH", "SOCIOL", "SOCPSY", "SOCSCI", "SOCWORK", "SPANISH", "STATS", "SUSTAIN", "THTRFLM", "TRONBME", "WHMIS", "WORKLABR"
 ]
 
 var codes = [];
@@ -210,107 +99,7 @@ bookCovers = ["../image/book-1.png",
     "../image/book5.png",
     "../image/book7.png",
 ]
-surnames = [
-    "Smith",
-    "Johnson",
-    "Williams",
-    "Jones",
-    "Brown",
-    "Davis",
-    "Miller",
-    "Wilson",
-    "Moore",
-    "Taylor",
-    "Anderson",
-    "Thomas",
-    "Jackson",
-    "White",
-    "Harris",
-    "Martin",
-    "Thompson",
-    "Garcia",
-    "Martinez",
-    "Robinson",
-    "Clark",
-    "Rodriguez",
-    "Lewis",
-    "Lee",
-    "Walker",
-    "Hall",
-    "Allen",
-    "Young",
-    "Hernandez",
-    "King",
-    "Wright",
-    "Lopez",
-    "Hill",
-    "Scott",
-    "Green",
-    "Adams",
-    "Baker",
-    "Gonzalez",
-    "Nelson",
-    "Carter",
-    "Mitchell",
-    "Perez",
-    "Roberts",
-    "Turner",
-    "Phillips",
-    "Campbell",
-    "Parker",
-    "Evans",
-    "Edwards",
-    "Collins",
-    "Stewart",
-    "Sanchez",
-    "Morris",
-    "Rogers",
-    "Reed",
-    "Cook",
-    "Morgan",
-    "Bell",
-    "Murphy",
-    "Bailey",
-    "Rivera",
-    "Cooper",
-    "Richardson",
-    "Cox",
-    "Howard",
-    "Ward",
-    "Torres",
-    "Peterson",
-    "Gray",
-    "Ramirez",
-    "James",
-    "Watson",
-    "Brooks",
-    "Kelly",
-    "Sanders",
-    "Price",
-    "Bennett",
-    "Wood",
-    "Barnes",
-    "Ross",
-    "Henderson",
-    "Coleman",
-    "Jenkins",
-    "Perry",
-    "Powell",
-    "Long",
-    "Patterson",
-    "Hughes",
-    "Flores",
-    "Washington",
-    "Butler",
-    "Simmons",
-    "Foster",
-    "Gonzales",
-    "Bryant",
-    "Alexander",
-    "Russell",
-    "Griffin",
-    "Diaz",
-    "Hayes"];
+surnames = [ "Smith", "Johnson", "Williams", "Jones", "Brown", "Davis", "Miller", "Wilson", "Moore", "Taylor", "Anderson", "Thomas", "Jackson", "White", "Harris", "Martin", "Thompson", "Garcia", "Martinez", "Robinson", "Clark", "Rodriguez", "Lewis", "Lee", "Walker", "Hall", "Allen", "Young", "Hernandez", "King", "Wright", "Lopez", "Hill", "Scott", "Green", "Adams", "Baker", "Gonzalez", "Nelson", "Carter", "Mitchell", "Perez", "Roberts", "Turner", "Phillips", "Campbell", "Parker", "Evans", "Edwards", "Collins", "Stewart", "Sanchez", "Morris", "Rogers", "Reed", "Cook", "Morgan", "Bell", "Murphy", "Bailey", "Rivera", "Cooper", "Richardson", "Cox", "Howard", "Ward", "Torres", "Peterson", "Gray", "Ramirez", "James", "Watson", "Brooks", "Kelly", "Sanders", "Price", "Bennett", "Wood", "Barnes", "Ross", "Henderson", "Coleman", "Jenkins", "Perry", "Powell", "Long", "Patterson", "Hughes", "Flores", "Washington", "Butler", "Simmons", "Foster", "Gonzales", "Bryant", "Alexander", "Russell", "Griffin", "Diaz", "Hayes"];
 
 
 var itemList = []
@@ -350,6 +139,17 @@ function updateItemListingSortedByRating(direction, minRating, numOfItems) {
             $("#itemTemplate").append(revisedItemList[i].getHTML());
         } else { break; }
     }
+    $(".explore-item-image").mouseenter(function(e){
+        e.preventDefault();
+        console.log(e.pageX, e.pageY);
+        $(".hide-item-details").css('left', e.pageX );
+        $(".hide-item-details").css('top', e.pageY );
+        $(this).parent().next().css('display', 'block');
+    });
+    $(".explore-item-parent").mouseleave(function(e){
+        $(this).children().eq(1).css('display', 'none');
+    });
+
 }
 
 function updateButtonText(id, newText, icon) {
