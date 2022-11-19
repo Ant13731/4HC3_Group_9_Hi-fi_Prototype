@@ -21,7 +21,6 @@ div.explore-item h1 {
 
 div.explore-item h3 {
     color: var(--black);
-
 }
 
 div.explore-item div.stars {
@@ -86,12 +85,21 @@ div.sorters-and-explore-field {
     border-radius: 2rem;
     /* border: .5rem solid rgba(0,0,0,.1); */
     box-shadow: 0 30px 40px rgba(0,0,0,.1);
-    background-color: rgba(204, 181, 225,.2);
+    background-color: rgba(234, 223, 244, 0.6);
     color: var(--black);
     z-index: 1;
     backdrop-filter: blur(10px) saturate(70%);
     /* text-align: center; */
-    width: 50%;
+    /* width: 50%; */
+    /* max-width: 70%; */
+    /* width: 60%; */
+    /* height: 50%; */
+    /* max-width: 50%; */
+    /* width: fit-content; */
+    /* aspect-ratio: 4/3; */
+    width: 75rem;
+    /* height: 50rem; */
+    /* min-width: 50%; */
     /* height: 100px; */
     padding: 0;
     transition: display 2s ease-out;
@@ -112,8 +120,9 @@ div.sorters-and-explore-field {
 }
 
 .hide-item-details img {
-    max-height: auto;
+    /* height: 90%; */
     max-width: 50%;
+    height: 40rem;
 }
 
 div.hide-item-details div.stars {
@@ -121,7 +130,8 @@ div.hide-item-details div.stars {
 }
 
 div.hide-item-details i {
-    color: #F4E86A;
+    /* color: #F4E86A; */
+    color: rgb(255, 191, 0);
 }
 
 .explore-item-button {
@@ -141,4 +151,34 @@ div.hide-item-details i {
 .explore-item-button:focus {
     outline-color: black;
     outline-width: 0.05rem;
+}
+
+.item-text-details {
+    display: block;
+    padding-right: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.item-text-details ul {
+    list-style-position: inside;
+    padding-left: 3rem;
+    list-style-type:square;
+}
+.item-text-details p {
+    text-overflow:ellipsis;
+    text-transform: none;
+    overflow: hidden;
+    display: -webkit-box;
+   -webkit-line-clamp: 3; /* number of lines to show */
+           line-clamp: 3; 
+   -webkit-box-orient: vertical;
+}
+.explore-item-button-wrapper {
+    padding: 0.5rem;
+}
+.item-text-details h1 {
+    font-size:x-large;
+    font-weight: bolder;
+    
 }
