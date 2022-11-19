@@ -1,4 +1,4 @@
-//taken from https://www.w3schools.com/howto/howto_js_accordion.asp
+//inspiration taken from https://www.w3schools.com/howto/howto_js_accordion.asp
 var acc = document.getElementsByClassName("accordion");
 var i;
 
@@ -21,8 +21,10 @@ for (i = 0; i < acc.length; i++) {
     });
 }
 
+//make the leftmost filters as an accordion widget
+//Note: only the rating buttons work
 
-
+//save us some code by storing the buttons internally as just an id and name
 class FilterListItem {
     constructor(id, name) {
         this.id = id;
@@ -32,7 +34,7 @@ class FilterListItem {
         return `<button class="filter-button" id="${this.id}">${this.name}</button>\n`;
     }
 }
-
+//dummy data
 
 courseList = [
     new FilterListItem("filterCourse1", "COMPSCI 3GC3"),
@@ -78,6 +80,7 @@ filterSearchForm = `<div style="padding-left:2.5%">
                         <input type="search" name="course" placeholder="Search courses" id="search-box">
                     </form></div`;
 
+// allows the search bar in the filter to work
 function updateFilterResults(searchString) {
     $("#CourseListFilters").empty();
     $("#CourseListFilters").append(filterSearchForm);
@@ -95,6 +98,7 @@ function updateFilterResults(searchString) {
 }
 
 $(document).ready(function () {
+    //set up all filters
     $("#CourseListFilters").append(filterSearchForm);
     for (var i = 0; i < courseList.length; i++) {
         $("#CourseListFilters").append(courseList[i].getHTML());

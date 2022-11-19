@@ -1,7 +1,7 @@
 @import url(style.css);
 @import url(explore.css);
 
-/* taken from https://www.w3schools.com/howto/howto_js_accordion.asp */
+/* inspiration taken from https://www.w3schools.com/howto/howto_js_accordion.asp */
 /* Style the buttons that are used to open and close the accordion panel */
 .accordion {
     background-color: #eee;
@@ -68,17 +68,12 @@ div.filters h2 {
 }
 
 .filter-search-form{
-    /* padding-left: 5%; */
-    /* padding-top: 1rem; */
-    /* width:50rem; */
     width: 95%;
     height:3rem;
     border:var(--border);
     overflow: hidden;
     background:#fff;
     display:flex;
-    /* align-items: center; */
-    /* vertical-align: center; */
     border-radius: .5rem;
 }
 
@@ -95,10 +90,6 @@ div.filters h2 {
     font-size: 1.5rem;
     padding-left: 1rem;
     padding-top:0.5rem;
-    /* text-align: center; */
-    /* height:100%; */
-    /* width:auto; */
-    /* padding-left: 1rem; */
     vertical-align: center;
     color:var(--black);
     cursor: pointer;

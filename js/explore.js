@@ -1,4 +1,6 @@
 
+// Turn a rating between 0 and 5 into a series of star icons (HTML string format)
+// Needs font awesome enabled on the HTML page to run
 function getRatingHTML(rating) {
     roundedRating = Math.round(rating * 2);
     stars = '';
@@ -19,6 +21,8 @@ function getRatingHTML(rating) {
 
     return stars;
 }
+
+//used to store the price and associated condition of an item (used in BookListElement)
 class PriceCondElement {
     constructor(price, condition) {
         this.price = price;
@@ -26,9 +30,9 @@ class PriceCondElement {
     }
 }
 
+// contains all information about a book/item
 class BookListElement {
     constructor(private_id, image, title, rating, author, isbn, edition, price_cond, courseList) {
-        // super(image, title, rating);
         this.author = author;
         this.title = title;
         this.image = image;
@@ -37,10 +41,10 @@ class BookListElement {
         this.edition = edition;
         this.price_cond = price_cond;
         this.courseList = courseList;
-        // this.onWishlist = false;
-        // this.inCart = false;
         this.id = private_id;
     }
+    //get an HTML string of a book's data (for use in the explore page item listing)
+    //the "hide-item-details" part is the div that shows up on hover
     getHTML() {
         var courseListHTML = "";
         for (var i = 0; i < this.courseList.length; i++) {
@@ -86,10 +90,12 @@ class BookListElement {
 
     }
 }
-
-courses = ["ABLD", "ANTHROP", "ARABIC", "ART", "ARTHIST", "ARTSSCI", "ASTRON", "AUTOTECH", "BIOCHEM", "BIOLOGY", "BIOMEDDC", "BIOPHYS", "BIOSAFE", "BIOTECH", "CAYUGA", "CHEM", "CHEMBIO", "CHEMBME", "CHEMENG", "CHINESE", "CIVBME", "CIVENG", "CIVTECH", "CLASSICS", "CMST", "CMTYENGA", "COLLAB", "COMMERCE", "COMPENG", "COMPSCI", "DATASCI", "EARTHSC", "ECON", "ELECBME", "ELECENG", "ENGINEER", "ENGLISH", "ENGNMGT", "ENGPHYS", "ENGSOCTY", "ENGTECH", "ENRTECH", "ENVIRSC", "ENVSOCTY", "EPHYSBME", "EXPLORE", "FARSI", "FRENCH", "GENDRST", "GENTECH", "GERMAN", "GLOBALZN", "GREEK", "HEBREW", "HISTORY", "HLTHAGE", "HTHSCI", "HUMAN", "HUMBEHV", "IARTS", "IBEHS", "IBH", "INDIGST", "INNOVATE", "INSPIRE", "INTENG", "ISCI", "ITALIAN", "JAPANESE", "KINESIOL", "KOREAN", "LABRST", "LATAM", "LATIN", "LIFESCI", "LINGUIST", "MANTECH", "MATH", "MATLS", "MATLSBME", "MECHBME", "MECHENG", "MECHTRON", "MEDIAART", "MEDPHYS", "MEDRADSC", "MELD", "MIDWIF", "MOHAWK", "MOLBIOL", "MUSIC", "MUSICCOG", "NEUROSCI", "NURSING", "OJIBWE", "PEACJUST", "PHARMAC", "PHILOS", "PHYSICS", "PNB", "POLISH", "POLSCI", "PROCTECH", "PSYCH", "RUSSIAN", "SANSKRIT", "SCAR", "SCICOMM", "SCIENCE", "SEP", "SFGNTECH", "SFWRBME", "SFWRENG", "SFWRTECH", "SMRTTECH", "SOCIOL", "SOCPSY", "SOCSCI", "SOCWORK", "SPANISH", "STATS", "SUSTAIN", "THTRFLM", "TRONBME", "WHMIS", "WORKLABR"
-]
-
+//////////////////////////////
+/// Default Data creation
+//---------------------------
+/// Randomly selects a combination of below courses, course codes, covers, surnames, conditions, and prices to make a book listing.
+//////////////////////////////
+courses = ["ABLD", "ANTHROP", "ARABIC", "ART", "ARTHIST", "ARTSSCI", "ASTRON", "AUTOTECH", "BIOCHEM", "BIOLOGY", "BIOMEDDC", "BIOPHYS", "BIOSAFE", "BIOTECH", "CAYUGA", "CHEM", "CHEMBIO", "CHEMBME", "CHEMENG", "CHINESE", "CIVBME", "CIVENG", "CIVTECH", "CLASSICS", "CMST", "CMTYENGA", "COLLAB", "COMMERCE", "COMPENG", "COMPSCI", "DATASCI", "EARTHSC", "ECON", "ELECBME", "ELECENG", "ENGINEER", "ENGLISH", "ENGNMGT", "ENGPHYS", "ENGSOCTY", "ENGTECH", "ENRTECH", "ENVIRSC", "ENVSOCTY", "EPHYSBME", "EXPLORE", "FARSI", "FRENCH", "GENDRST", "GENTECH", "GERMAN", "GLOBALZN", "GREEK", "HEBREW", "HISTORY", "HLTHAGE", "HTHSCI", "HUMAN", "HUMBEHV", "IARTS", "IBEHS", "IBH", "INDIGST", "INNOVATE", "INSPIRE", "INTENG", "ISCI", "ITALIAN", "JAPANESE", "KINESIOL", "KOREAN", "LABRST", "LATAM", "LATIN", "LIFESCI", "LINGUIST", "MANTECH", "MATH", "MATLS", "MATLSBME", "MECHBME", "MECHENG", "MECHTRON", "MEDIAART", "MEDPHYS", "MEDRADSC", "MELD", "MIDWIF", "MOHAWK", "MOLBIOL", "MUSIC", "MUSICCOG", "NEUROSCI", "NURSING", "OJIBWE", "PEACJUST", "PHARMAC", "PHILOS", "PHYSICS", "PNB", "POLISH", "POLSCI", "PROCTECH", "PSYCH", "RUSSIAN", "SANSKRIT", "SCAR", "SCICOMM", "SCIENCE", "SEP", "SFGNTECH", "SFWRBME", "SFWRENG", "SFWRTECH", "SMRTTECH", "SOCIOL", "SOCPSY", "SOCSCI", "SOCWORK", "SPANISH", "STATS", "SUSTAIN", "THTRFLM", "TRONBME", "WHMIS", "WORKLABR"];
 var codes = [];
 letters = "qwertyuiopasdfghjklzxcvbnm".toUpperCase();
 for (var i = 0; i < 10; i++) {
@@ -131,13 +137,16 @@ sessionStorage.setItem('wishlist', JSON.stringify(wishList));
 sessionStorage.setItem('cartList', JSON.stringify(cartList));
 console.log(JSON.parse(sessionStorage.getItem('itemList')));
 
-
+//used to sort objects with the sorter
 const DirectionEnum = Object.freeze({
     ASCENDING: 1,
     DESCENDING: 2,
     NONE: 3
 })
 
+//displays all explore page items, ordering them by rating (specified by `direction`),
+//eliminating those that do not satisfy the minimum rating, and displaying no more than
+//the max numOfItems
 function updateItemListingSortedByRating(direction, minRating, numOfItems) {
     $("#itemTemplate").empty();
     revisedItemList = itemList.filter(val => val.rating >= minRating);
@@ -156,68 +165,51 @@ function updateItemListingSortedByRating(direction, minRating, numOfItems) {
 
             $("#itemTemplate").append(revisedItemList[i].getHTML());
             $(`#book-list-element-${revisedItemList[i].id}`).children().eq(0).children().eq(4).click(function (e) {
-                if (!cartList.includes(revisedItemList[i]))
-                {
+                if (!cartList.includes(revisedItemList[i])) {
                     cartList.push(revisedItemList[i]);
                     sessionStorage.setItem('cartList', JSON.stringify(cartList));
                 }
             });
             $(`#book-list-element-${revisedItemList[i].id}`).children().eq(1).children().eq(1).children().eq(8).children().eq(0).click(function (e) {
-                if (!cartList.includes(revisedItemList[i]))
-                {cartList.push(revisedItemList[i]);
-                sessionStorage.setItem('cartList', JSON.stringify(cartList));
-            }
+                if (!cartList.includes(revisedItemList[i])) {
+                    cartList.push(revisedItemList[i]);
+                    sessionStorage.setItem('cartList', JSON.stringify(cartList));
+                }
             });
             $(`#book-list-element-${revisedItemList[i].id}`).children().eq(1).children().eq(1).children().eq(8).children().eq(0).click(function (e) {
-                if (!wishlist.includes(revisedItemList[i]))
-                {
+                if (!wishlist.includes(revisedItemList[i])) {
                     wishlist.push(revisedItemList[i]);
-                sessionStorage.setItem('wishlist', JSON.stringify(wishList));
+                    sessionStorage.setItem('wishlist', JSON.stringify(wishList));
                 }
             });
         } else { break; }
     }
+    //used to get correct hover behaviour (prevent the hover object
+    //from moving around when trying to interact with the hovered object)
     var prevMouseEvent;
     $(".hide-item-details").mouseenter(function (e) {
         prevMouseEvent = e;
     })
-    // $(".hide-item-details:offscreen").mouseenter(function(e) {
-    //     rect = e.getBoundingClientRect();
-    //     $(".hide-item-details").css('left', e.pageX - document.documentElement.scrollLeft );
-    //     $(".hide-item-details").css('top', e.pageY - document.documentElement.scrollTop );
-    // })
 
     $(".explore-item-image").mouseenter(function (e) {
         if (prevMouseEvent != null) { return; }
         e.preventDefault();
-        // console.log(e.pageX, e.pageY);
         rect = document.documentElement.getBoundingClientRect();
-        // console.log(rect);
-
-        //Width() here doesnt seem to be returning the proper size - we could instead just
-        //hardcode it here using 60% of the `rect` values...
-        //outerwidth doesnt help at all here
-        //
-        //but, using width() does give the correct offset, when the width actually triggers properly in the if statement
-        //we could try using `right` if the mouse cursor is past the halfway point...
-        //because the width of the box is 60% according to the css stuff anyways, so the middle might always get cut off?s
         var xPos = e.pageX - document.documentElement.scrollLeft;
-        // console.log(xPos);
-        // console.log($(".hide-item-details").outerWidth(true));
-        // console.log($(".hide-item-details").css("width"));
-        //right half
+        
+        //mouse is on right third of the page, display the hover to the left of the mouse
         if (xPos >= 2 * rect.right / 3) {
             $(".hide-item-details").css('left', '');
             $(".hide-item-details").css('right', rect.right - xPos);
 
         }
-        //center
+        //mouse is in the center of the page, display the hover in the center of the mouse
         else if (xPos > 3 * rect.right / 8 && xPos < 2 * rect.right / 3) {
             $(".hide-item-details").css('right', '');
             $(".hide-item-details").css('left', xPos - $(".hide-item-details").width() / 2);
 
         }
-        //left half
+        //left half, display hover to the right of the mouse
         else {
             $(".hide-item-details").css('right', '');
             $(".hide-item-details").css('left', xPos);
@@ -225,6 +217,7 @@ function updateItemListingSortedByRating(direction, minRating, numOfItems) {
 
         var yPos = e.pageY - document.documentElement.scrollTop;
 
+        //if the hover would be cut off by the bottom of the screen, display the hover above the mouse's position
         if (e.clientY + $(".hide-item-details").height() > window.innerHeight) {
             $(".hide-item-details").css('top', '');
             $(".hide-item-details").css('bottom', window.innerHeight - e.clientY);
@@ -233,7 +226,6 @@ function updateItemListingSortedByRating(direction, minRating, numOfItems) {
             $(".hide-item-details").css('bottom', '');
             $(".hide-item-details").css('top', yPos);
         }
-        // $(".hide-item-details").css('left', xPos );
         $(this).parent().next().css('display', 'flex');
 
     });
@@ -244,12 +236,13 @@ function updateItemListingSortedByRating(direction, minRating, numOfItems) {
 
 }
 
+//attach an id to a button (allows us to change the contents of the button when they are pressed)
 function updateButtonText(id, newText, icon) {
     document.getElementById(id).textContent = newText;
     $(`#${id}`).append(icon);
 }
 
-// defaults
+// defaults for sorting and filters
 var showRating = 0;
 var showRatingDirection = DirectionEnum.NONE;
 var numOfItems = 50;
@@ -258,42 +251,16 @@ $(document).ready(function () {
     for (var i = 0; i < itemList.length; i++) {
         $("#itemTemplate").append(itemList[i].getHTML());
     }
+    //make the left filter buttons work
     updateItemListingSortedByRating(showRatingDirection, showRating, numOfItems);
-    sellerRating = document.getElementById("sellerRating0");
-    sellerRating.addEventListener("click", function () {
-        showRating = 0;
-        updateItemListingSortedByRating(showRatingDirection, showRating, numOfItems);
-    });
-    sellerRating = document.getElementById("sellerRating1");
-    sellerRating.addEventListener("click", function () {
-        showRating = 1;
-        updateItemListingSortedByRating(showRatingDirection, showRating, numOfItems);
-
-    });
-    sellerRating = document.getElementById("sellerRating2");
-    sellerRating.addEventListener("click", function () {
-        showRating = 2;
-        updateItemListingSortedByRating(showRatingDirection, showRating, numOfItems);
-
-    });
-    sellerRating = document.getElementById("sellerRating3");
-    sellerRating.addEventListener("click", function () {
-        showRating = 3;
-        updateItemListingSortedByRating(showRatingDirection, showRating, numOfItems);
-
-    });
-    sellerRating = document.getElementById("sellerRating4");
-    sellerRating.addEventListener("click", function () {
-        showRating = 4;
-        updateItemListingSortedByRating(showRatingDirection, showRating, numOfItems);
-
-    });
-    sellerRating = document.getElementById("sellerRating5");
-    sellerRating.addEventListener("click", function () {
-        showRating = 5;
-        updateItemListingSortedByRating(showRatingDirection, showRating, numOfItems);
-
-    });
+    for (var i = 0; i < 6; i++ ) {
+        sellerRating = document.getElementById(`sellerRating${i}`);
+        sellerRating.addEventListener("click", function () {
+            showRating = i;
+            updateItemListingSortedByRating(showRatingDirection, showRating, numOfItems);
+        });
+    }
+    //make the ordering sorters work
     orderByRating = document.getElementById("rateAscending");
     orderByRating.addEventListener("click", function () {
         showRatingDirection = DirectionEnum.ASCENDING;
@@ -308,6 +275,7 @@ $(document).ready(function () {
         updateButtonText("dropdownMenuButtonSortBy", "Sorted by Rating ", '<i class="fas fa-arrow-down"></i>\n');
 
     });
+    //make the number of items dropdown work
     orderByRating = document.getElementById("show10Items");
     orderByRating.addEventListener("click", function () {
         numOfItems = 10;
