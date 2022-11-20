@@ -19,34 +19,27 @@
     <!-- custom css file link  -->
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/explore.css">
-    <link rel="stylesheet" href="../css/accordion.css">
+    <link rel="stylesheet" href="../css/cart.css">
+    <!-- <link rel="stylesheet" href="../css/accordion.css"> -->
 
 </head>
 
 <body>
-
     <header class="header">
-
         <div class="header-1">
-
             <a href="#" class="hamburgerMenu"><i class="fas fa-bars"></i></a>
-
             <a href="#" class="logo"> <i class="fas fa-book"></i> bookly </a>
-
             <form action="" class="search-form">
                 <input type="search" name="" placeholder="search here..." id="search-box">
                 <label for="search-box" class="fas fa-search"></label>
             </form>
-
             <div class="icons">
                 <div id="search-btn" class="fas fa-search"></div>
                 <a href="#" class="fas fa-heart"></a>
                 <a href="#" class="fas fa-shopping-cart"></a>
                 <div id="login-btn" class="fas fa-user"></div>
             </div>
-
         </div>
-
         <div class="header-2">
             <nav class="navbar">
                 <a href="#home">home</a>
@@ -56,9 +49,21 @@
                 <a href="#blogs">blogs</a>
             </nav>
         </div>
-
     </header>
 
+    <div class="proceed-to-checkout" id="proceed-to-checkout">
+    </div>
+    
+    <div class="cart-wish-list-container container">
+        <h1>Your Cart</h1>
+        <div class="row justify-content-evenly" id="itemTemplateCart">
+        </div>
+    </div>
+    <div class="cart-wish-list-container container">
+        <h1>Your Wishlist</h1>
+        <div class="row justify-content-evenly" id="itemTemplateWishList">
+        </div>
+    </div>
 
 
     <!-- Bootstrap stuff-->
@@ -72,8 +77,8 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="../js/accordion.js"></script>
-    <script src="../js/explore.js"></script>
+    <script src="../js/cart.js"></script>
+    <!-- <script src="../js/explore.js"></script> -->
 </body>
 
 </html>
