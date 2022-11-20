@@ -1,0 +1,110 @@
+@import url(style.css);
+@import url(explore.css);
+
+/* inspiration taken from https://www.w3schools.com/howto/howto_js_accordion.asp */
+/* Style the buttons that are used to open and close the accordion panel */
+.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding-left: 18px;
+    padding-right: 18px;
+    padding-top: 9px;
+    padding-bottom: 9px;
+    width: 100%;
+    text-align: left;
+    vertical-align: middle;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    font-size: medium;
+}
+button.accordion::after {
+    content: "+";
+    float:right;
+    font-weight: bold;
+}
+button.accordion.active::after {
+    content: "-";
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active,
+.accordion:hover {
+    background-color: #ccc;
+}
+
+/* Style the accordion panel. Note: hidden by default */
+.panel {
+    /* padding: 1rem; */
+    background-color: #F5F5F5;
+    max-height: 0;
+    padding: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    transition: padding 0.0s ease-out;
+}
+.active-panel {
+    padding: 1rem;
+}
+
+div.filters {
+    width: 27.5%;
+    float: left;
+    padding-left: 2.5%;
+    padding-top: 10%;
+}
+
+div.filters h2 {
+    color: var(--black);
+    /* accent-color: #AAA; */
+
+}
+.filterTitle {
+    color:var(--black);
+    font-size: medium;
+    font-weight: normal;
+    padding-left:2%;
+}
+
+.filter-search-form{
+    width: 95%;
+    height:3rem;
+    border:var(--border);
+    overflow: hidden;
+    background:#fff;
+    display:flex;
+    border-radius: .5rem;
+}
+
+.filter-search-form input{
+    font-size: 1.3rem;
+    padding:0 1.2rem;
+    height:100%;
+    width:100%;
+    text-transform: none;
+    color:var(--black);
+}
+
+.filter-search-form label{
+    font-size: 1.5rem;
+    padding-left: 1rem;
+    padding-top:0.5rem;
+    vertical-align: center;
+    color:var(--black);
+    cursor: pointer;
+}
+
+.filter-search-form label:hover{
+    color:var(--green);
+}
+
+.filter-button {
+    width: 100%;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 1rem;
+    font-size: small;
+    background-color: #F5F5F5;
+    text-align: left;
+}
