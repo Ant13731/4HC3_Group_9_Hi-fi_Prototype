@@ -173,25 +173,31 @@ function updateItemListingSortedByRating(direction, minRating, numOfItems) {
                     cartList.push(revisedItemList[index]);
                     localStorage.setItem('cartList', JSON.stringify(cartList));
                     console.log(index, cartList);
+                    
                 }
-                
+                e.stopPropagation();  
             });
             $(`#book-list-element-${revisedItemList[i].id}`).children().eq(1).children().eq(1).children().eq(8).children().eq(0).click(function (e) {
                 if (!cartList.includes(revisedItemList[index])) {
                     cartList.push(revisedItemList[index]);
                     localStorage.setItem('cartList', JSON.stringify(cartList));
                     console.log(cartList);
+                    
                 }
+                e.stopPropagation();
             });
             $(`#book-list-element-${revisedItemList[i].id}`).children().eq(1).children().eq(1).children().eq(9).children().eq(0).click(function (e) {
                 if (!wishList.includes(revisedItemList[index])) {
                     wishList.push(revisedItemList[index]);
                     localStorage.setItem('wishList', JSON.stringify(wishList));
                     console.log(wishList);
+                    
                 }
+                e.stopPropagation();
             });
             $(`#book-list-element-${revisedItemList[i].id}`).click(function (e){
                 // console.log(JSON.stringify(revisedItemList[i]))
+                
                 localStorage.setItem("itemDetails", JSON.stringify(revisedItemList[index]))
                 window.location.href = 'itemDetails.html';
             })

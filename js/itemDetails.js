@@ -2,6 +2,8 @@
 var item;
 var cartList = [];
 var wishList = [];
+
+
 window.onload = ( () => {
     item =  JSON.parse( localStorage.getItem("itemDetails"));
     cartList = JSON.parse(localStorage.getItem('cartList')) ?? [];
@@ -26,7 +28,11 @@ $(document).ready(function() {
     });
 });
 function getHTML(item){
-    return `<div class="item-content row mt-5 container" >
+    var courseListHTML = "";
+    for (var i = 0; i < item.courseList.length; i++) {
+        courseListHTML += `<li>${item.courseList[i]}</li>\n`;
+    }
+    return `<div class="item-content row-cols-* mt-5  container-fluid" >
                 <div class="col-lg-5 col-md-12 col-12">
 
                     <img src="${item.image}" class="img-fluid pb-1" alt="">
@@ -35,27 +41,73 @@ function getHTML(item){
                             <img src="${item.image}" class="small-img" width ="100%" alt="">
                         </div>
                         <div class="small-img-col">
-                            <img src="${item.image}" class="small-img" width ="100%" alt="">
+                            <img src="../image/book-img-1.jpg" class="small-img" width ="100%" alt="">
                         </div>
                         <div class="small-img-col">
-                            <img src="${item.image}" class="small-img" width ="100%" alt="">
+                            <img src="../image/book-img-2.jpeg" class="small-img" width ="100%" alt="">
                         </div>
                         <div class="small-img-col">
-                            <img src="${item.image}" class="small-img" width ="100%" alt="">
+                            <img src="../image/book-img-3.jpg" class="small-img" width ="100%" alt="">
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-12 col-12">
-                    
+                <div class="col-lg-5 col-md-12 col-12">
                     <h1 >${item.title} </h1>
                     <h3>by ${item.author}</h3>
                     <h3 >ISBN: ${item.isbn}, Volume ${item.edition}</h3>
-                    <h2 class="py-4"> $40.00</h2>
-                    <button id="cartID" class="add-to-cart">Add to cart</button>
-                    <button id="wishlistID" class="add-to-cart">Add to wishlist</button>
-                    <h4 class="mt-5 mb-5">Description:</h4>
-                    <span>Lorem ipsum</span>
                     
+                    <h2 class="py-4">$ ${item.price_cond[0].price.toFixed(2)}</h2>
+                    <div style="display:flex">
+                                <h4>Used in:</h4>
+                                <ul>
+                                    ${courseListHTML}
+                                </ul>
+                            </div>
+                    <div class="stars">
+                        ${getRatingHTML(item.rating)}
+                    </div>
+                    <div class="button-wrapper">
+                        <button id="cartID" class="add-to-cart">Add to cart</button>
+                    </div>
+                    <div class="button-wrapper"> 
+                        <button id="wishlistID" class="add-to-cart">Add to wishlist</button>
+                    </div>    
+                    <h3 class="mt-5 mb-5">Description:</h3>
+                    <span><p class="desc-content" >Volume ${item.edition} covers a wide variety of key concepts under the topic of ${item.title.substr(0, item.title.indexOf(" "))}. The author, ${item.author}, has contributed much to the field and has shared their experiences throughout this book.</p>
+                    </span>
                 </div>
-            </div`
+                <div class="seller-box containter-fluid col-lg-5 col-md-12 col-12">
+                    <div class="card mt-5 p-5">
+                        <h2>Seller Info</h2>
+                        <h3> Name: Simeon Elly</h3>
+                        <h3> Phone: (647) 447-5257</h3>
+                        <h3> Email: ellys5@mcmaster.ca</h3>
+                    </div>
+                    
+                    <div class="button-wrapper mt-5">
+                        <button id="checkoutID" class="add-to-cart">Checkout</button>
+                    </div>
+                </div>
+            </div>`
+}
+
+function getRatingHTML(rating) {
+    roundedRating = Math.round(rating * 2);
+    stars = '';
+    for (var starCount = 0; starCount < 5; starCount++) {
+
+        if (roundedRating > 1) {
+            stars = stars + '<i class="fas fa-star"></i>\n';
+            roundedRating -= 2;
+        }
+        else if (roundedRating === 1) {
+            stars = stars + '<i class="fas fa-star-half-alt"></i>\n';
+            roundedRating -= 1;
+        }
+        else {
+            stars = stars + '<i class="far fa-star"></i>\n';
+        }
+    }
+
+    return stars;
 }
