@@ -22,109 +22,259 @@
 		<link rel="stylesheet" href="css/style.css" />
 
 	</head>
-<div class="sellItemsForm">
+    <body>
+    <div class="header">
+        		<!-- header section starts  -->
 
-    <form action="">
-        <h3>Sell your items here</h3>
+		<header class="header">
+			<div class="header-1">
+				<!-- <a href="#" class="hamburgerMenu"><i class="fas fa-bars"></i></a> -->
+				<nav>
+					<div class="navbar">
+						<div class="container nav-container">
+							<input class="checkbox" type="checkbox" name="" id="" />
+							<div class="hamburger-lines">
+								<span class="line line1"></span>
+								<span class="line line2"></span>
+								<span class="line line3"></span>
+							</div>
+							<div class="logo">
+								<h1>Navbar</h1>
+							</div>
+							<div class="menu-items">
+								<li><a href="#">Home</a></li>
+								<li><a href="#">about</a></li>
+								<li><a href="#">blogs</a></li>
+								<li><a href="#">portfolio</a></li>
+								<li><a href="#">contact</a></li>
+							</div>
+						</div>
+					</div>
+				</nav>
+				<button class="btn" style="margin-right: 100rem">Register</button>
+				<a href="#" class="logo"> <i class="fas fa-book"></i> BookSTore </a>
 
-        <!-- title name -->
-        <div class="title">
-            <span>Book Title</span>
-            <input
-                type="Text"
-                name=""
-                class="box"
-                placeholder="Item to sell"
-                id=""
-            />
-        </div>
+				<!-- <form action="" class="search-form">
+					<input
+						type="search"
+						name=""
+						placeholder="search here..."
+						id="search-box"
+					/>
+					<label for="search-box" class="fas fa-search"></label>
+				</form> -->
 
-        <!-- category selector -->
-        <div class="category" >
-            <label for="category">Which category is this item from</label>
-            <select name="Category" id="category">  
-                <option value="book">Book</option>
-                <option value="clothing">Clothing</option>
-                <option value="tool">Tool</option>
-                <option value="tech">Technology</option>
-                <option value="other">other</option>
-            </select>
-            <div class="other" style="display: inline;">
-                <span id="other">Other: </span>
-                <input type="text" name="other" id="other" placeholder="other"/>
+				<div class="icons">
+					<div id="search-btn" class="fas fa-search"></div>
+					<!-- <a href="#" class="fas fa-heart"></a> -->
+					<button class="btn">
+						Cart <a href="#" class="fas fa-shopping-cart"></a>
+					</button>
+					<button class="btn">SELL</button>
+					<button class="btn">
+						Sign In
+						<div id="login-btn" class="fas fa-user"></div>
+					</button>
+					<select class="btn">
+						<option value="">English</option>
+						<option value="dog">French</option>
+						<option value="cat">Spanish</option>
+						<option value="hamster">German</option>
+						<option value="parrot">Portugese</option>
+						<option value="spider">Russian</option>
+						<option value="goldfish">Persian</option>
+					</select>
+				</div>
+				<!-- <div class="container">
+					<div class="toggle"><i class="fas fa-sun"></i></div>
+				</div> -->
+			</div>
+
+			<div class="header-between">
+				<form action="" class="search-form">
+					<input
+						type="search"
+						name=""
+						placeholder="search here..."
+						id="search-box"
+					/>
+					<label for="search-box" class="fas fa-search"></label>
+				</form>
+			</div>
+
+			<div class="header-2">
+				<!-- <nav class="navbar">
+					<a href="#home">home</a>
+					<a href="views/itemListing.html">Sell</a>
+					<a href="views/explore.html">Buy</a>
+					<a href="views/createAccount.html">Account</a>
+				</nav> -->
+			</div>
+		</header>
+
+    </div>
+
+    <div class="sellItemsForm">
+
+        <form action="">
+            <h3>Sell your items here</h3>
+
+            <!-- title name -->
+            <div class="title">
+                <span>Book Title</span>
+                <input
+                    type="Text"
+                    name=""
+                    class="box"
+                    placeholder="Item to sell"
+                    id=""
+                />
             </div>
-        </div>
-        
-        <!-- author name -->
-        <div class="Author">
-            <span>Author</span>
-            <input
-                type="Text"
-                name=""
-                class="box"
-                placeholder="enter the author of the book"
-                id=""
-            />
-        </div>
 
-        <!-- Edition -->
-        <div class="edition">
-            <span>Edition</span>
-            <input
-                type="Text"
-                name=""
-                class="box"
-                placeholder="enter the edition of the book"
-                id=""
-            />
-        </div>
+            <!-- category selector -->
+            <div class="category" >
+                <label for="category">Which category is this item from</label>
+                <select name="Category" id="category">  
+                    <option value="book">Book</option>
+                    <option value="clothing">Clothing</option>
+                    <option value="tool">Tool</option>
+                    <option value="tech">Technology</option>
+                    <option value="other">other</option>
+                </select>
+                <div class="other" style="display: inline;">
+                    <span id="other">Other: </span>
+                    <input type="text" name="other" id="other" placeholder="other"/>
+                </div>
+            </div>
+            
+            <!-- author name -->
+            <div class="Author">
+                <span>Author</span>
+                <input
+                    type="Text"
+                    name=""
+                    class="box"
+                    placeholder="enter the author of the book"
+                    id=""
+                />
+            </div>
 
-        <div class="ISBN">
-            <span>ISBN</span>
-            <input
-                type="number"
-                name=""
-                class="box"
-                placeholder="enter the ISBN of the book"
-                id=""
-            />
-        </div>
+            <!-- Edition -->
+            <div class="edition">
+                <span>Edition</span>
+                <input
+                    type="Text"
+                    name=""
+                    class="box"
+                    placeholder="enter the edition of the book"
+                    id=""
+                />
+            </div>
 
-        <div class="price">
-            <span>Price</span>
-            <input
-                type="number"
-                name=""
-                class="box"
-                placeholder="enter the price of the book"
-                id=""
-            />
-        </div>
+            <div class="ISBN">
+                <span>ISBN</span>
+                <input
+                    type="number"
+                    name=""
+                    class="box"
+                    placeholder="enter the ISBN of the book"
+                    id=""
+                />
+            </div>
 
-        <div class="description">
-            <span>Description</span>
-            <input
-                type="Text" style="height: 200px;"
-                name=""
-                class="box"
-                placeholder="enter the description of the book"
-                id="description"
-            />
-        </div>
+            <div class="price">
+                <span>Price</span>
+                <input
+                    type="number"
+                    name=""
+                    class="box"
+                    placeholder="enter the price of the book"
+                    id=""
+                />
+            </div>
 
-        <div class="DOP">   
-            <span>Date of Purchase</span>
-            <input
-                type="date"
-                name=""
-                class="box"
-                placeholder="enter the date of purchase of the book"
-                id="date"
-            />
-        </div>
+            <div class="description">
+                <span>Description</span>
+                <input
+                    type="Text" style="height: 200px;"
+                    name=""
+                    class="box"
+                    placeholder="enter the description of the book"
+                    id="description"
+                />
+            </div>
 
-        
-        <input type="submit" value="bookSubmit" class="btn" />
-        <p>Don't have an account? <a href="createAccount.html">create one</a></p>
-    </form>
-</div>
+            <div class="DOP">   
+                <span>Date of Purchase</span>
+                <input
+                    type="date"
+                    name=""
+                    class="box"
+                    placeholder="enter the date of purchase of the book"
+                    id="date"
+                />
+            </div>
+
+            
+            <input type="submit" value="bookSubmit" class="btn" />
+            <p>Don't have an account? <a href="createAccount.html">create one</a></p>
+        </form>
+    </div>
+
+            <!-- footer section starts  -->
+            <div class="footer">
+            <section class="footer">
+                <div class="box-container">
+                    <div class="box">
+                        <h3>our locations</h3>
+                        <a href="#"> <i class="fas fa-map-marker-alt"></i> india </a>
+                        <a href="#"> <i class="fas fa-map-marker-alt"></i> USA </a>
+                        <a href="#"> <i class="fas fa-map-marker-alt"></i> russia </a>
+                        <a href="#"> <i class="fas fa-map-marker-alt"></i> france </a>
+                        <a href="#"> <i class="fas fa-map-marker-alt"></i> japan </a>
+                        <a href="#"> <i class="fas fa-map-marker-alt"></i> africa </a>
+                    </div>
+
+                    <div class="box">
+                        <h3>quick links</h3>
+                        <a href="#"> <i class="fas fa-arrow-right"></i> home </a>
+                        <a href="#"> <i class="fas fa-arrow-right"></i> featured </a>
+                        <a href="#"> <i class="fas fa-arrow-right"></i> arrivals </a>
+                        <a href="#"> <i class="fas fa-arrow-right"></i> reviews </a>
+                        <a href="#"> <i class="fas fa-arrow-right"></i> blogs </a>
+                    </div>
+
+                    <div class="box">
+                        <h3>extra links</h3>
+                        <a href="#"> <i class="fas fa-arrow-right"></i> account info </a>
+                        <a href="#"> <i class="fas fa-arrow-right"></i> ordered items </a>
+                        <a href="#"> <i class="fas fa-arrow-right"></i> privacy policy </a>
+                        <a href="#"> <i class="fas fa-arrow-right"></i> payment method </a>
+                        <a href="#"> <i class="fas fa-arrow-right"></i> our serivces </a>
+                    </div>
+
+                    <div class="box">
+                        <h3>contact info</h3>
+                        <a href="#"> <i class="fas fa-phone"></i> +123-456-7890 </a>
+                        <a href="#"> <i class="fas fa-phone"></i> +111-222-3333 </a>
+                        <a href="#"> <i class="fas fa-envelope"></i> shaikhanas@gmail.com </a>
+                        <img src="image/worldmap.png" class="map" alt="" />
+                    </div>
+                </div>
+
+                <div class="share">
+                    <a href="#" class="fab fa-facebook-f"></a>
+                    <a href="#" class="fab fa-twitter"></a>
+                    <a href="#" class="fab fa-instagram"></a>
+                    <a href="#" class="fab fa-linkedin"></a>
+                    <a href="#" class="fab fa-pinterest"></a>
+                </div>
+
+                <div class="credit">
+                    created by <span>mr. web designer</span> | all rights reserved!
+                </div>
+            </section>
+        </div>
+        <!-- footer section ends  -->
+    </body>
+</html>
