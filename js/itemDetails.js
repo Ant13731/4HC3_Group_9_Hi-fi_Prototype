@@ -26,6 +26,9 @@ $(document).ready(function() {
             console.log(wishList)
         }
     });
+    $(`#checkoutID`).click(function (e) {
+        window.location.href = 'checkout.html';
+    });
 });
 function getHTML(item){
     var courseListHTML = "";
@@ -84,7 +87,7 @@ function getHTML(item){
                         <h3> Email: ellys5@mcmaster.ca</h3>
                     </div>
                     
-                    <div class="button-wrapper mt-5">
+                    <div class="button-wrapper mt-5" >
                         <button id="checkoutID" class="add-to-cart">Checkout</button>
                     </div>
                 </div>
