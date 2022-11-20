@@ -89,6 +89,16 @@ function getHTMLWish(item) {
             </div>`
 }
 
+function getHTMLEmptyList() {
+    return `<div class="col-12 py-4">
+                <div class="cart-wish-list-empty-wrapper">
+                <div class="cart-wish-list-empty">
+                <p>Uh oh, looks like this list is empty. Feel free to <a href="explore.html">explore our selection</a> of books and find something that suits your taste. In the meantime, we'll wait right here.</p>
+            </div>
+            </div>
+            </div>`;
+}
+
 window.addEventListener('load', function (e) {
     cartList = JSON.parse(localStorage.getItem('cartList')) ?? [];
     wishList = JSON.parse(localStorage.getItem('wishList')) ?? [];
@@ -129,6 +139,14 @@ function loadCartAndWishList() {
             loadCartAndWishList();
             loadProceedToCheckout();
         });
+    }
+    if (cartList.length === 0) {
+        $("#itemTemplateCart").append(getHTMLEmptyList());
+
+    }
+    if (wishList.length === 0) {
+        $("#itemTemplateWishList").append(getHTMLEmptyList());
+
     }
 }
 
