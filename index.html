@@ -20,12 +20,27 @@
 
 		<!-- custom css file link  -->
 		<link rel="stylesheet" href="css/style.css" />
+
+		<!-- library to include the header and footer files  -->
+		<script
+    		src="https://code.jquery.com/jquery-3.3.1.js"
+    		integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    		crossorigin="anonymous">
+		</script>	
+		<script>	
+			$(function(){
+				$("#header").load("header.html"); 
+  				$("#footer").load("footer.html");
+			});
+		</script>
 	</head>
 	<body>
 		<!-- bhbueb -->
 		<!-- header section starts  -->
 
-		<header class="header">
+		<div id="header"></div>
+		<div id="footer"></div>
+		<!-- <header class="header">
 			<div class="header-1">
 				<a href="#" class="hamburgerMenu"><i class="fas fa-bars"></i></a>
 
@@ -52,13 +67,13 @@
 			<div class="header-2">
 				<nav class="navbar">
 					<a href="#home">home</a>
-					<!-- <a href="views/itemBuy.html">Buy</a>  to test the itemBuy page -->
+					<a href="views/itemBuy.html">Buy</a>  to test the itemBuy page
 					<a href="views/itemListing.html">Sell</a>
 					<a href="views/explore.html">Buy</a>
 					<a href="views/createAccount.html">Account</a>
 				</nav>
 			</div>
-		</header>
+		</header> -->
 
 		<!-- header section ends -->
 

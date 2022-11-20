@@ -1,1 +1,111 @@
 <!-- Aniruddh's Page -->
+<head>
+    <script src="arora.js"></script>
+</head>
+<div class="login-form-container">
+    <div id="close-login-btn" class="fas fa-times"></div>
+
+    <form action="">
+        <h3>Sell your items here</h3>
+
+        <!-- title name -->
+        <div class="title">
+            <span>Book Title</span>
+            <input
+                type="Text"
+                name=""
+                class="box"
+                placeholder="Item to sell"
+                id=""
+            />
+        </div>
+
+        <!-- category selector -->
+        <div class="category" >
+            <label for="category">Which category is this item from</label>
+            <select name="Category" id="category">  
+                <option value="book">Book</option>
+                <option value="clothing">Clothing</option>
+                <option value="tool">Tool</option>
+                <option value="tech">Technology</option>
+                <option value="other">other</option>
+            </select>
+            <div class="other" style="display: inline;">
+                <span id="other">Other: </span>
+                <input type="text" name="other" id="other" placeholder="other"/>
+            </div>
+        </div>
+        
+        <!-- author name -->
+        <div class="Author">
+            <span>Author</span>
+            <input
+                type="Text"
+                name=""
+                class="box"
+                placeholder="enter the author of the book"
+                id=""
+            />
+        </div>
+
+        <!-- Edition -->
+        <div class="edition">
+            <span>Edition</span>
+            <input
+                type="Text"
+                name=""
+                class="box"
+                placeholder="enter the edition of the book"
+                id=""
+            />
+        </div>
+
+        <div class="ISBN">
+            <span>ISBN</span>
+            <input
+                type="number"
+                name=""
+                class="box"
+                placeholder="enter the ISBN of the book"
+                id=""
+            />
+        </div>
+
+        <div class="price">
+            <span>Price</span>
+            <input
+                type="number"
+                name=""
+                class="box"
+                placeholder="enter the price of the book"
+                id=""
+            />
+        </div>
+
+        <div class="description">
+            <span>Description</span>
+            <input
+                type="Text" style="height: 200px;"
+                name=""
+                class="box"
+                placeholder="enter the description of the book"
+                id="description"
+            />
+        </div>
+
+        <div class="DOP">   
+            <span>Date of Purchase</span>
+            <input
+                type="date"
+                name=""
+                class="box"
+                placeholder="enter the date of purchase of the book"
+                id="date"
+            />
+        </div>
+
+        
+        <input type="submit" value="bookSubmit" class="btn" />
+        <p>Don't have an account? <a href="createAccount.html">create one</a></p>
+    </form>
+</div>
