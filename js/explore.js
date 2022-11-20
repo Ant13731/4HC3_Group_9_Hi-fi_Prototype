@@ -1,6 +1,9 @@
 
 // Turn a rating between 0 and 5 into a series of star icons (HTML string format)
 // Needs font awesome enabled on the HTML page to run
+// function itemDetailsRedirect(){
+//     window.location.replace("");
+// }
 function getRatingHTML(rating) {
     roundedRating = Math.round(rating * 2);
     stars = '';
@@ -50,7 +53,7 @@ class BookListElement {
         for (var i = 0; i < this.courseList.length; i++) {
             courseListHTML += `<li>${this.courseList[i]}</li>\n`;
         }
-        return `<div class="col-xl-3 col-lg-3 col-md-4 col-sm-5 col-xs-sm-6 py-4 explore-item-parent" id="book-list-element-${this.id}">
+        return `<div  class="col-xl-3 col-lg-3 col-md-4 col-sm-5 col-xs-sm-6 py-4 explore-item-parent" id="book-list-element-${this.id}">
                     <div class="explore-item p-4 item-details">
                         <img src="${this.image}" alt="" class="explore-item-image">
                         <h1>${this.title}</h1>
@@ -162,7 +165,7 @@ function updateItemListingSortedByRating(direction, minRating, numOfItems) {
     }
     for (var i = 0; i < revisedItemList.length; i++) {
         if (i < numOfItems) {
-
+            const index = i;
             $("#itemTemplate").append(revisedItemList[i].getHTML());
             $(`#book-list-element-${revisedItemList[i].id}`).children().eq(0).children().eq(4).click(function (e) {
                 if (!cartList.includes(revisedItemList[i])) {
@@ -182,6 +185,11 @@ function updateItemListingSortedByRating(direction, minRating, numOfItems) {
                     sessionStorage.setItem('wishlist', JSON.stringify(wishList));
                 }
             });
+            $(`#book-list-element-${revisedItemList[i].id}`).click(function (e){
+                // console.log(JSON.stringify(revisedItemList[i]))
+                localStorage.setItem("itemDetails", JSON.stringify(revisedItemList[index]))
+                window.location.href = 'itemDetails.html';
+            })
         } else { break; }
     }
     //used to get correct hover behaviour (prevent the hover object
