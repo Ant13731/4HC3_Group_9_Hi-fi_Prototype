@@ -152,10 +152,9 @@ function loadProceedToCheckout() {
                                         <h2>Proceed to checkout</h2>
                                     </button> `);
     $("#proceed-to-checkout").children().eq(-1).click(function(e) {
-
+        //TODO go to checkout page
+        //window.location.href = "checkout.html";
     });
-    
-
 }
 
 
