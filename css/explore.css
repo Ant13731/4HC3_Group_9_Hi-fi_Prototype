@@ -9,7 +9,6 @@ div.explore-field {
 div.explore-item {
     border: var(--border);
     text-align: center;
-    color: green;
 }
 
 div.explore-item h1 {
@@ -70,7 +69,6 @@ div.sorters-and-explore-field {
     max-width: 100%;
     padding: 0;
     transition: display 2s ease-out;
-    position: fixed;
 }
 
 .explore-item-image {
@@ -123,8 +121,17 @@ div.hide-item-details i {
 
 .item-text-details ul {
     list-style-position: inside;
-    padding-left: 3rem;
+    padding-left: 1rem;
     list-style-type: square;
+}
+.item-text-details li {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    /* number of lines to show */
+    line-clamp: 1;
+    -webkit-box-orient: vertical;
 }
 
 .item-text-details p {

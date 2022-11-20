@@ -66,7 +66,7 @@ class BookListElement {
                             <h1>${this.title}</h1>
                             <h3>by ${this.author}</h3>
                             <h3>ISBN: ${this.isbn}, Volume ${this.edition}</h3>
-                            <h3>From $${this.price_cond[0].price}, ${this.price_cond[0].condition} Condition</h3>
+                            <h3>From $${this.price_cond[0].price.toFixed(2)}, ${this.price_cond[0].condition} Condition</h3>
                             <h5>Description:</h5>
                             <p>Volume ${this.edition} covers a wide variety of key concepts under the topic of ${this.title.substr(0, this.title.indexOf(" "))}. The author, ${this.author}, has contributed much to the field and has shared their experiences throughout this book.</p>
                             <div style="display:flex">
@@ -132,10 +132,10 @@ for (var i = 0; i < 300; i++) {
     }
     itemList.push(new BookListElement(i, cover, `${courseName} ${edition}`, rating, `${firstInitial}. ${surname}`, isbn, edition, price_cond, courseListBooks));
 }
-sessionStorage.setItem('itemList', JSON.stringify(itemList));
-sessionStorage.setItem('wishlist', JSON.stringify(wishList));
-sessionStorage.setItem('cartList', JSON.stringify(cartList));
-console.log(JSON.parse(sessionStorage.getItem('itemList')));
+localStorage.setItem('itemList', JSON.stringify(itemList));
+localStorage.setItem('wishList', JSON.stringify(wishList));
+localStorage.setItem('cartList', JSON.stringify(cartList));
+// console.log(JSON.parse(localStorage.getItem('itemList')));
 
 //used to sort objects with the sorter
 const DirectionEnum = Object.freeze({
@@ -162,24 +162,29 @@ function updateItemListingSortedByRating(direction, minRating, numOfItems) {
     }
     for (var i = 0; i < revisedItemList.length; i++) {
         if (i < numOfItems) {
-
+            //Need this constant or else i changes value inside the function!
+            const index = i;
             $("#itemTemplate").append(revisedItemList[i].getHTML());
             $(`#book-list-element-${revisedItemList[i].id}`).children().eq(0).children().eq(4).click(function (e) {
-                if (!cartList.includes(revisedItemList[i])) {
-                    cartList.push(revisedItemList[i]);
-                    sessionStorage.setItem('cartList', JSON.stringify(cartList));
+                if (!cartList.some(function(elem) {return JSON.stringify(elem) === JSON.stringify(revisedItemList[index]);})) {
+                    cartList.push(revisedItemList[index]);
+                    localStorage.setItem('cartList', JSON.stringify(cartList));
+                    console.log(index, cartList);
                 }
+                
             });
             $(`#book-list-element-${revisedItemList[i].id}`).children().eq(1).children().eq(1).children().eq(8).children().eq(0).click(function (e) {
-                if (!cartList.includes(revisedItemList[i])) {
-                    cartList.push(revisedItemList[i]);
-                    sessionStorage.setItem('cartList', JSON.stringify(cartList));
+                if (!cartList.includes(revisedItemList[index])) {
+                    cartList.push(revisedItemList[index]);
+                    localStorage.setItem('cartList', JSON.stringify(cartList));
+                    console.log(cartList);
                 }
             });
-            $(`#book-list-element-${revisedItemList[i].id}`).children().eq(1).children().eq(1).children().eq(8).children().eq(0).click(function (e) {
-                if (!wishlist.includes(revisedItemList[i])) {
-                    wishlist.push(revisedItemList[i]);
-                    sessionStorage.setItem('wishlist', JSON.stringify(wishList));
+            $(`#book-list-element-${revisedItemList[i].id}`).children().eq(1).children().eq(1).children().eq(9).children().eq(0).click(function (e) {
+                if (!wishList.includes(revisedItemList[index])) {
+                    wishList.push(revisedItemList[index]);
+                    localStorage.setItem('wishList', JSON.stringify(wishList));
+                    console.log(wishList);
                 }
             });
         } else { break; }

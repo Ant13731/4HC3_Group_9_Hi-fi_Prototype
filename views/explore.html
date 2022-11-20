@@ -41,7 +41,7 @@
             <div class="icons">
                 <div id="search-btn" class="fas fa-search"></div>
                 <a href="#" class="fas fa-heart"></a>
-                <a href="#" class="fas fa-shopping-cart"></a>
+                <a href="cart.html" class="fas fa-shopping-cart"></a>
                 <div id="login-btn" class="fas fa-user"></div>
             </div>
 
@@ -71,103 +71,52 @@
         <div class="panel" id="SellerRatingListFilters"></div>
     </div>
     <div class="sorters-and-explore-field">
-    <div class="sorters">
-        <div class="dropdown sorter-dropdown">
-            <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButtonShow" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Show...
-            </button>
-            <div class="dropdown-menu sorter-dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <button class="dropdown-item" id="show10Items">Show 10 Items</button>
-                <button class="dropdown-item" id="show20Items">Show 20 Items</button>
-                <button class="dropdown-item" id="show50Items">Show 50 Items</button>
-                <button class="dropdown-item" id="show100Items">Show 100 Items</button>
+        <div class="sorters">
+            <div class="dropdown sorter-dropdown">
+                <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButtonShow"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Show...
+                </button>
+                <div class="dropdown-menu sorter-dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <button class="dropdown-item" id="show10Items">Show 10 Items</button>
+                    <button class="dropdown-item" id="show20Items">Show 20 Items</button>
+                    <button class="dropdown-item" id="show50Items">Show 50 Items</button>
+                    <button class="dropdown-item" id="show100Items">Show 100 Items</button>
+                </div>
+            </div>
+            <div class="dropdown sorter-dropdown">
+                <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButtonSortBy"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Sort by...
+                </button>
+                <div class="dropdown-menu sorter-dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <button class="dropdown-item" id="rateAscending">Rating Ascending <i
+                            class="fas fa-arrow-up"></i></button>
+                    <button class="dropdown-item" id="rateDescending">Rating Descending <i
+                            class="fas fa-arrow-down"></i></button>
+                </div>
             </div>
         </div>
-        <div class="dropdown sorter-dropdown">
-            <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButtonSortBy" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Sort by...
-            </button>
-            <div class="dropdown-menu sorter-dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <button class="dropdown-item" id="rateAscending">Rating Ascending <i class="fas fa-arrow-up"></i></button>
-                <button class="dropdown-item" id="rateDescending">Rating Descending <i class="fas fa-arrow-down"></i></button>
+
+        <div class="explore-field container">
+            <div class="row mx-auto" id="itemTemplate">
             </div>
         </div>
     </div>
 
-    <div class="explore-field container">
-        <div class="row mx-auto" id="itemTemplate">
-        </div>
-    </div></div>
-
-        <!-- Header: TODO separate into a component -->
-
-        <!-- Footer: TODO separate into a component -->
-        <!-- <section class="footer">
-            
-            <div class="box-container">
-                
-                <div class="box">
-                    <h3>our locations</h3>
-                    <a href="#"> <i class="fas fa-map-marker-alt"></i> india </a>
-                    <a href="#"> <i class="fas fa-map-marker-alt"></i> USA </a>
-                    <a href="#"> <i class="fas fa-map-marker-alt"></i> russia </a>
-                    <a href="#"> <i class="fas fa-map-marker-alt"></i> france </a>
-                    <a href="#"> <i class="fas fa-map-marker-alt"></i> japan </a>
-                    <a href="#"> <i class="fas fa-map-marker-alt"></i> africa </a>
-                </div>
-                
-                <div class="box">
-                    <h3>quick links</h3>
-                    <a href="#"> <i class="fas fa-arrow-right"></i> home </a>
-                    <a href="#"> <i class="fas fa-arrow-right"></i> featured </a>
-                    <a href="#"> <i class="fas fa-arrow-right"></i> arrivals </a>
-                    <a href="#"> <i class="fas fa-arrow-right"></i> reviews </a>
-                    <a href="#"> <i class="fas fa-arrow-right"></i> blogs </a>
-                </div>
-                
-                <div class="box">
-                    <h3>extra links</h3>
-                    <a href="#"> <i class="fas fa-arrow-right"></i> account info </a>
-                    <a href="#"> <i class="fas fa-arrow-right"></i> ordered items </a>
-                    <a href="#"> <i class="fas fa-arrow-right"></i> privacy policy </a>
-                    <a href="#"> <i class="fas fa-arrow-right"></i> payment method </a>
-                    <a href="#"> <i class="fas fa-arrow-right"></i> our serivces </a>
-                </div>
-                
-                <div class="box">
-                    <h3>contact info</h3>
-                    <a href="#"> <i class="fas fa-phone"></i> +123-456-7890 </a>
-                    <a href="#"> <i class="fas fa-phone"></i> +111-222-3333 </a>
-                    <a href="#"> <i class="fas fa-envelope"></i> shaikhanas@gmail.com </a>
-                    <img src="image/worldmap.png" class="map" alt="">
-                </div>
-                
-            </div>
-            
-            <div class="share">
-                <a href="#" class="fab fa-facebook-f"></a>
-                <a href="#" class="fab fa-twitter"></a>
-                <a href="#" class="fab fa-instagram"></a>
-                <a href="#" class="fab fa-linkedin"></a>
-                <a href="#" class="fab fa-pinterest"></a>
-            </div>
-            
-            <div class="credit"> created by <span>mr. web designer</span> | all rights reserved! </div>
-            
-        </section> -->
-        <!-- Bootstrap stuff-->
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-            crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
-            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-            crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
-            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-            crossorigin="anonymous"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <script src="../js/accordion.js"></script>
-        <script src="../js/explore.js"></script>
+    <!-- Bootstrap stuff-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="../js/accordion.js"></script>
+    <script src="../js/explore.js"></script>
 </body>
 
 </html>
