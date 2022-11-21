@@ -1,6 +1,10 @@
+var searchString = "";
 
 // Turn a rating between 0 and 5 into a series of star icons (HTML string format)
 // Needs font awesome enabled on the HTML page to run
+// function itemDetailsRedirect(){
+//     window.location.replace("");
+// }
 function getRatingHTML(rating) {
     roundedRating = Math.round(rating * 2);
     stars = '';
@@ -50,7 +54,7 @@ class BookListElement {
         for (var i = 0; i < this.courseList.length; i++) {
             courseListHTML += `<li>${this.courseList[i]}</li>\n`;
         }
-        return `<div class="col-xl-3 col-lg-3 col-md-4 col-sm-5 col-xs-sm-6 py-4 explore-item-parent" id="book-list-element-${this.id}">
+        return `<div  class="col-xl-3 col-lg-3 col-md-4 col-sm-5 col-xs-sm-6 py-4 explore-item-parent" id="book-list-element-${this.id}">
                     <div class="explore-item p-4 item-details">
                         <img src="${this.image}" alt="" class="explore-item-image">
                         <h1>${this.title}</h1>
@@ -137,6 +141,16 @@ localStorage.setItem('wishList', JSON.stringify(wishList));
 localStorage.setItem('cartList', JSON.stringify(cartList));
 // console.log(JSON.parse(localStorage.getItem('itemList')));
 
+function getHTMLEmptyList() {
+    return `<div class="col-12 py-4">
+                <div class="cart-wish-list-empty-wrapper" style="height:auto;">
+                <div class="cart-wish-list-empty" style="height:auto;">
+                <p>Uh oh, looks like our search came up empty. Feel free to <a href="explore.html">explore our selection</a> of books and find something that suits your taste. In the meantime, we'll wait right here.</p>
+            </div>
+            </div>
+            </div>`;
+}
+
 //used to sort objects with the sorter
 const DirectionEnum = Object.freeze({
     ASCENDING: 1,
@@ -150,6 +164,11 @@ const DirectionEnum = Object.freeze({
 function updateItemListingSortedByRating(direction, minRating, numOfItems) {
     $("#itemTemplate").empty();
     revisedItemList = itemList.filter(val => val.rating >= minRating);
+
+    if(searchString != "") {
+        revisedItemList = revisedItemList.filter(elem => elem.title.toLowerCase().includes(searchString.toLowerCase()));
+    }
+
     if (direction !== DirectionEnum.NONE) {
         revisedItemList.sort((a, b) => {
             if (a.rating < b.rating) { return -1; }
@@ -160,6 +179,7 @@ function updateItemListingSortedByRating(direction, minRating, numOfItems) {
             revisedItemList.reverse();
         }
     }
+    
     for (var i = 0; i < revisedItemList.length; i++) {
         if (i < numOfItems) {
             //Need this constant or else i changes value inside the function!
@@ -170,25 +190,41 @@ function updateItemListingSortedByRating(direction, minRating, numOfItems) {
                     cartList.push(revisedItemList[index]);
                     localStorage.setItem('cartList', JSON.stringify(cartList));
                     console.log(index, cartList);
+                    
                 }
-                
+                e.stopPropagation();  
             });
             $(`#book-list-element-${revisedItemList[i].id}`).children().eq(1).children().eq(1).children().eq(8).children().eq(0).click(function (e) {
                 if (!cartList.includes(revisedItemList[index])) {
                     cartList.push(revisedItemList[index]);
                     localStorage.setItem('cartList', JSON.stringify(cartList));
                     console.log(cartList);
+                    
                 }
+                e.stopPropagation();
             });
             $(`#book-list-element-${revisedItemList[i].id}`).children().eq(1).children().eq(1).children().eq(9).children().eq(0).click(function (e) {
                 if (!wishList.includes(revisedItemList[index])) {
                     wishList.push(revisedItemList[index]);
                     localStorage.setItem('wishList', JSON.stringify(wishList));
                     console.log(wishList);
+                    
                 }
+                e.stopPropagation();
             });
+            $(`#book-list-element-${revisedItemList[i].id}`).click(function (e){
+                // console.log(JSON.stringify(revisedItemList[i]))
+                
+                localStorage.setItem("itemDetails", JSON.stringify(revisedItemList[index]))
+                window.location.href = 'itemDetails.html';
+            })
         } else { break; }
     }
+
+    if (revisedItemList.length === 0) {
+        $("#itemTemplate").append(getHTMLEmptyList());
+    }
+
     //used to get correct hover behaviour (prevent the hover object
     //from moving around when trying to interact with the hovered object)
     var prevMouseEvent;
@@ -252,7 +288,12 @@ var showRating = 0;
 var showRatingDirection = DirectionEnum.NONE;
 var numOfItems = 50;
 
+window.addEventListener('load', function (e) {
+    searchString = localStorage.getItem('searchString') ?? "";
+});
+
 $(document).ready(function () {
+    searchString = localStorage.getItem('searchString') ?? "";
     for (var i = 0; i < itemList.length; i++) {
         $("#itemTemplate").append(itemList[i].getHTML());
     }
