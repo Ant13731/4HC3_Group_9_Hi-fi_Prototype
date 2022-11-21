@@ -108,7 +108,6 @@ window.addEventListener('load', function (e) {
 function loadCartAndWishList() {
     $("#itemTemplateCart").empty();
     $("#itemTemplateWishList").empty();
-
     for (var i = 0; i < cartList.length; i++) {
         const index = i;
         $("#itemTemplateCart").append(getHTMLCart(cartList[i]));
@@ -123,7 +122,7 @@ function loadCartAndWishList() {
         const index = i;
         $("#itemTemplateWishList").append(getHTMLWish(wishList[i]));
         $(`#book-list-element-wish-${wishList[i].id}`).children().eq(0).children().eq(1).children().eq(8).children().eq(0).click(function(e) {
-            if (!cartList.some(function(elem) {return JSON.stringify(elem) === JSON.stringify(cartList[index]);}))
+            if (!cartList.some(function(elem) {return JSON.stringify(elem) === JSON.stringify(wishList[index]);}))
             {
                 cartList.push(wishList[index]);
             }
