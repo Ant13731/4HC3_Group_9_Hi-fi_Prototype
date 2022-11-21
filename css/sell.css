@@ -14,7 +14,18 @@ div .sellItemsForm {
     
 }
 
-h4 {
+.border2 {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    padding: 5x 20px;
+    margin: 8px 0;
+    padding: 5px;
+}
+
+h1 {
     font-size: 3rem;
     flex: auto;
     color: black;
@@ -25,6 +36,15 @@ h4 {
     flex: auto;
     color: black;
     padding : 10px;
+    
+    
+}
+
+.format2{
+    font-size: 1.5rem;
+    flex: auto;
+    color: black;
+    padding: 10px;
     
 }
 
