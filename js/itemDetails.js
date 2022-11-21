@@ -31,6 +31,9 @@ window.onload = ( () => {
 });
 
 $(document).ready(function() {
+    item =  JSON.parse( localStorage.getItem("itemDetails")) ?? fakeBook;
+    cartList = JSON.parse(localStorage.getItem('cartList')) ?? [];
+    wishList = JSON.parse(localStorage.getItem('wishList')) ?? [];
     $("#item-container").append(getHTML());
     $(`#cartID`).click(function (e) {
         if (!cartList.includes(item)) {
