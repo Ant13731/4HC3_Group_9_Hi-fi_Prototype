@@ -13,8 +13,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sell your item</title>
 
+    <link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+		/>
+    
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+        <!-- BOOTSTRAP css file link  --><link rel="stylesheet" 
+            ref="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" 
+            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
+            crossorigin="anonymous">
 
         <!-- custom css sell file link  -->
         <link
@@ -28,57 +38,69 @@
 	</head>
     <body>
 <!-- *****************   START OF HEADER ******************* -->
-   
-        <header class="header">
-            <div class="header-1">
-                <div class="nvbr">
-                <nav>
-                    <div class="navbar">
-                        <div class="container nav-container">
-                            <input class="checkbox" type="checkbox" name="" id="" />
-                            <div class="hamburger-lines">
-                                <span class="line line1"></span>
-                                <span class="line line2"></span>
-                                <span class="line line3"></span>
-                            </div>
-                            
-                            <div class="menu-items">
-                                <li><a href="../index.html">Home</a></li>
-                                <li><a href="explore.html">Explore</a></li>
-                                <li><a href="accountDetails.html">Account </a></li>
-                                <li><a href="cart.html">Cart </a></li>
-                                <li><a href="#">Contact</a></li>
-                            </div>
-                        </div>
+ 
+<header class="header">
+    <div class="header-1">
+        <div class="nvbr">
+        <nav>
+            <div class="navbar">
+                <div class="container nav-container">
+                    <input class="checkbox" type="checkbox" name="" id="" />
+                    <div class="hamburger-lines">
+                        <span class="line line1"></span>
+                        <span class="line line2"></span>
+                        <span class="line line3"></span>
                     </div>
-                </nav></div>
-                <button onclick="location.href='createAccount.html'" class="btn" style="position:absolute;left:10rem;">Register</button>
-                <a href="../index.html" class="logo main-logo"><i class="fas fa-book"></i> Bookstore</a>
-    
-                <div class="icons">
-                    <div id="search-btn" class="fas fa-search"></div>
-                    <button onclick="location.href='cart.html'" class="btn hdr-btn">
-                        Cart <a href="cart.html" class="fas fa-shopping-cart"></a>
-                    </button>
-                    <button onclick="location.href='sellItem.html'" class="btn hdr-btn">
-                        SELL <a href="sellItem.html" class="fas fa-dollar-sign"></a>
-                    </button>
-                    <button class="btn hdr-btn" id="login-btn">
-                        Sign In
-                        <div class="fas fa-user"></div>
-                    </button>
-                    <select class="btn hdr-btn">
-                        <option value="">English</option>
-                        <option value="dog">French</option>
-                        <option value="cat">Spanish</option>
-                        <option value="hamster">German</option>
-                        <option value="parrot">Portugese</option>
-                        <option value="spider">Russian</option>
-                        <option value="goldfish">Persian</option>
-                    </select>
+                    
+                    <div class="menu-items">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="explore.html">Explore</a></li>
+                        <li><a href="accountDetails.html">Account </a></li>
+                        <li><a href="cart.html">Cart </a></li>
+                        <li><a href="#">Contact</a></li>
+                    </div>
                 </div>
             </div>
-        </header>
+        </nav></div>
+        <button onclick="location.href='createAccount.html'" class="btn" style="position:absolute;left:10rem;">Register</button>
+        <a href="../index.html" class="logo main-logo"><i class="fas fa-book"></i> Bookstore</a>
+
+        <div class="icons">
+            <div id="search-btn" class="fas fa-search"></div>
+            <button onclick="location.href='cart.html'" class="btn hdr-btn">
+                Cart <a href="cart.html" class="fas fa-shopping-cart"></a>
+            </button>
+            <button onclick="location.href='sellItem.html'" class="btn hdr-btn">
+                SELL <a href="sellItem.html" class="fas fa-dollar-sign"></a>
+            </button>
+            <button class="btn hdr-btn" id="login-btn">
+                Sign In
+                <div class="fas fa-user"></div>
+            </button>
+            <select class="btn hdr-btn">
+                <option value="">English</option>
+                <option value="dog">French</option>
+                <option value="cat">Spanish</option>
+                <option value="hamster">German</option>
+                <option value="parrot">Portugese</option>
+                <option value="spider">Russian</option>
+                <option value="goldfish">Persian</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="header-between">
+        <form action="" class="search-form">
+            <input
+                type="search"
+                name=""
+                placeholder="search here..."
+                id="search-box"
+            />
+            <label for="search-box" class="fas fa-search"></label>
+        </form>
+    </div>
+</header>
 
 <!-- *****************   START OF SELL ITEMS ******************* -->
     <div class="container">
@@ -187,62 +209,6 @@
     </div>
     </div>
 
-    <!-- *****************   START OF FOOTER ******************* -->
-            <!-- footer section starts  -->
-            <div class="footer">
-            <section class="footer">
-                <div class="box-container">
-                    <div class="box">
-                        <h3>our locations</h3>
-                        <a href="#"> <i class="fas fa-map-marker-alt"></i> india </a>
-                        <a href="#"> <i class="fas fa-map-marker-alt"></i> USA </a>
-                        <a href="#"> <i class="fas fa-map-marker-alt"></i> russia </a>
-                        <a href="#"> <i class="fas fa-map-marker-alt"></i> france </a>
-                        <a href="#"> <i class="fas fa-map-marker-alt"></i> japan </a>
-                        <a href="#"> <i class="fas fa-map-marker-alt"></i> africa </a>
-                    </div>
-
-                    <div class="box">
-                        <h3>quick links</h3>
-                        <a href="#"> <i class="fas fa-arrow-right"></i> home </a>
-                        <a href="#"> <i class="fas fa-arrow-right"></i> featured </a>
-                        <a href="#"> <i class="fas fa-arrow-right"></i> arrivals </a>
-                        <a href="#"> <i class="fas fa-arrow-right"></i> reviews </a>
-                        <a href="#"> <i class="fas fa-arrow-right"></i> blogs </a>
-                    </div>
-
-                    <div class="box">
-                        <h3>extra links</h3>
-                        <a href="#"> <i class="fas fa-arrow-right"></i> account info </a>
-                        <a href="#"> <i class="fas fa-arrow-right"></i> ordered items </a>
-                        <a href="#"> <i class="fas fa-arrow-right"></i> privacy policy </a>
-                        <a href="#"> <i class="fas fa-arrow-right"></i> payment method </a>
-                        <a href="#"> <i class="fas fa-arrow-right"></i> our serivces </a>
-                    </div>
-
-                    <div class="box">
-                        <h3>contact info</h3>
-                        <a href="#"> <i class="fas fa-phone"></i> +123-456-7890 </a>
-                        <a href="#"> <i class="fas fa-phone"></i> +111-222-3333 </a>
-                        <a href="#"> <i class="fas fa-envelope"></i> shaikhanas@gmail.com </a>
-                        <img src="image/worldmap.png" class="map" alt="" />
-                    </div>
-                </div>
-
-                <div class="share">
-                    <a href="#" class="fab fa-facebook-f"></a>
-                    <a href="#" class="fab fa-twitter"></a>
-                    <a href="#" class="fab fa-instagram"></a>
-                    <a href="#" class="fab fa-linkedin"></a>
-                    <a href="#" class="fab fa-pinterest"></a>
-                </div>
-
-                <div class="credit">
-                    created by <span>mr. web designer</span> | all rights reserved!
-                </div>
-            </section>
-            <!-- footer section ends  -->
-        </div>
 
 
 
