@@ -12,6 +12,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sell your item</title>
+    <link
+            rel="stylesheet"
+            href="../css/sell.css"
+        />
 
     <link
 			rel="stylesheet"
@@ -27,14 +31,11 @@
             crossorigin="anonymous">
 
         <!-- custom css sell file link  -->
-        <link
-            rel="stylesheet"
-            href="../css/sell.css"
-        />
+        
 
 		<!-- custom css file link  -->
 		<link rel="stylesheet" href="../css/style.css" />
-
+        
 	</head>
     <body>
 <!-- *****************   START OF HEADER ******************* -->
@@ -94,7 +95,7 @@
 <!-- *****************   START OF SELL ITEMS ******************* -->
     <div class="container">
 
-       <h4 class="mb-3" >Sell your items here</h3>
+       <h1 class="mb-3" >Sell your items here</h1>
         <form>
             <div class="row">
                 <!-- title name -->
@@ -110,7 +111,7 @@
 
             </div>
             <!-- category selector -->
-            <div class="form-group "  >
+            <div class="form-group"  >
                 <label for="category" class="format">Which category is this item from</label>
                 <select class="edit border" name="Category" id="category">  
                     <option value="book">Book</option>
@@ -120,15 +121,15 @@
                     <option value="other">other</option>
                 </select>
                 <div class="other" style="display: inline;">
-                    <label id="other" class="format">Other: </span>
-                    <input type="text" class="form-control border " name="other" id="other" placeholder="Other"/>
+                    <label id="other" class="format2"> Other: </label>
+                    <input type="text" class="form-control border2" name="other" id="other" placeholder="Other"/>
                 </div>
             </div>
             
            
 
             <!-- Edition -->
-            <div class="edition format">
+            <div class="form-group">
                 <label for="edition" class="format">Edition</label>
                 <input
                     type="Text"
@@ -139,7 +140,7 @@
             </div>
             
             <!-- ISBN -->
-            <div class="ISBN format">
+            <div class="ISBN">
                 <label for="isbn" class="format">ISBN</label>
                 <input
                     type="number"
