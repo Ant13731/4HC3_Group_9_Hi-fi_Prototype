@@ -164,7 +164,7 @@ const DirectionEnum = Object.freeze({
 function updateItemListingSortedByRating(direction, minRating, numOfItems) {
     $("#itemTemplate").empty();
     revisedItemList = itemList.filter(val => val.rating >= minRating);
-
+    console.log(minRating);
     if(searchString != "") {
         revisedItemList = revisedItemList.filter(elem => elem.title.toLowerCase().includes(searchString.toLowerCase()));
     }
@@ -300,9 +300,10 @@ $(document).ready(function () {
     //make the left filter buttons work
     updateItemListingSortedByRating(showRatingDirection, showRating, numOfItems);
     for (var i = 0; i < 6; i++ ) {
+        const index = i;
         sellerRating = document.getElementById(`sellerRating${i}`);
         sellerRating.addEventListener("click", function () {
-            showRating = i;
+            showRating = index;
             updateItemListingSortedByRating(showRatingDirection, showRating, numOfItems);
         });
     }
