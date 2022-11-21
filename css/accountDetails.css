@@ -35,7 +35,9 @@ body {
 }
 
 .labels {
-    font-size: 11px
+    font-size: 11px;
+    width: 50%;
+    max-width: 50%;
 }
 
 .add-experience:hover {
@@ -43,4 +45,13 @@ body {
     color: #fff;
     cursor: pointer;
     border: solid 1px #BA68C8
+}
+.profile-left-side{
+    border-right: solid;
+    text-align: center;
+    text-align: left;
+}
+.profile-left-side-first{
+    border-bottom: solid;
+    padding-bottom: 10rem;
 }
