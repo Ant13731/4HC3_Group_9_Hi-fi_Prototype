@@ -1,0 +1,20 @@
+body {
+    background-image: url("https://media.istockphoto.com/id/1367756024/vector/green-watercolor-background-illustration.jpg?s=612x612&w=0&k=20&c=0NharLiQndU9LeBxt0Lr3RvjngfnUwokM3PhvWqWhV0=");
+    background-color: #cccccc;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background-image: linear-gradient(
+    to bottom,
+    rgba(255, 255, 0, 0.5),
+    rgba(0, 0, 255, 0.5)
+  ), url("https://images.rawpixel.com/image_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcm0yODMtbnVubnktNDM2LmpwZw.jpg"); */
+
+
+
+   }
+
+.container {
+    max-width: 960px;
+  }
+  
+  .lh-condensed { line-height: 1.25; }
