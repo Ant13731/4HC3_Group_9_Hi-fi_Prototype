@@ -164,7 +164,6 @@ const DirectionEnum = Object.freeze({
 function updateItemListingSortedByRating(direction, minRating, numOfItems) {
     $("#itemTemplate").empty();
     revisedItemList = itemList.filter(val => val.rating >= minRating);
-    console.log(minRating);
     if(searchString != "") {
         revisedItemList = revisedItemList.filter(elem => elem.title.toLowerCase().includes(searchString.toLowerCase()));
     }
