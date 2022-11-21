@@ -89,17 +89,6 @@
         </div>
     </div>
 
-    <div class="header-between">
-        <form action="" class="search-form">
-            <input
-                type="search"
-                name=""
-                placeholder="search here..."
-                id="search-box"
-            />
-            <label for="search-box" class="fas fa-search"></label>
-        </form>
-    </div>
 </header>
 
 <!-- *****************   START OF SELL ITEMS ******************* -->
@@ -144,7 +133,7 @@
                 <input
                     type="Text"
                     class="form-control border"
-                    placeholder="enter the edition"
+                    placeholder="Enter the edition"
                     id="edition"
                 />
             </div>
@@ -155,7 +144,7 @@
                 <input
                     type="number"
                     class="form-control border"
-                    placeholder="enter the ISBN"
+                    placeholder="Enter the ISBN"
                     id="isbn"
                 />
             </div>
@@ -167,7 +156,7 @@
                 <input
                     type="number"
                     class="form-control border"
-                    placeholder="enter the price"
+                    placeholder="Enter the price"
                     id="price"
                 />
             </div>
@@ -179,7 +168,7 @@
                 <textarea
                     type="Text" style="height: 200px;"
                     class="form-control border"
-                    placeholder="enter the description"
+                    placeholder="Enter the description"
                     id="desc"
                 ></textarea>
             </div>
@@ -190,7 +179,7 @@
                 <input
                     type="date"
                     class="form-control"
-                    placeholder="enter the date of purchase of the book"
+                    placeholder="Enter the date of purchase of the book"
                     id="date"
                 />
             </div>
@@ -203,8 +192,11 @@
             
 
             <!-- submit -->
-            <input type="submit" value="bookSubmit" class="btn" />
-            <p>Don't have an account? <a href="createAccount.html">create one</a></p>
+            <button onclick="window.location.href='../index.html'" class="btn">Submit</button>
+            <button onclick="window.location.href='../index.html'" class="btn">Save for later</button>
+            <button onclick="window.location.href='../index.html'" class="btn">Remove</button>
+            <!-- <a href="../index.html"><input type="submit" value="Submit" class="btn" /></a> -->
+            <p style="padding:1rem;font-size:medium">Don't have an account? <a href="createAccount.html">create one</a></p>
         </form>
     </div>
     </div>
