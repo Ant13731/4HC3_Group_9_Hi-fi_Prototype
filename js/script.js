@@ -1,3 +1,40 @@
+document.getElementById("search-box").addEventListener("keypress", function(e) {
+
+	if(e.key === "Enter") {
+		e.preventDefault();
+		localStorage.setItem('searchString', document.getElementById("search-box").value);
+		window.location.href = "views/explore.html";
+	}
+
+});
+class PriceCondElement {
+    constructor(price, condition) {
+        this.price = price;
+        this.condition = condition;
+    }
+}
+class BookListElement {
+    constructor(private_id, image, title, rating, author, isbn, edition, price_cond, courseList) {
+        this.author = author;
+        this.title = title;
+        this.image = image;
+        this.rating = rating;
+        this.isbn = isbn;
+        this.edition = edition;
+        this.price_cond = price_cond;
+        this.courseList = courseList;
+        this.id = private_id;
+    }
+}
+fakeBook = new BookListElement(-1, "../image/mathsBookResize.jpg", "Introduction to Probability", 5, "Dr. B Chopra", "01234567890", 2, [new PriceCondElement(100.00, "Excellent")], ["STATS 2D03"] )
+
+document.querySelector("#buy-item-now").onclick = () => {
+	localStorage.setItem('itemDetails', JSON.stringify(fakeBook));
+	localStorage.setItem('cartList', JSON.stringify([]));
+	localStorage.setItem('wishList', JSON.stringify([]));
+	window.location.href = "views/itemDetails.html";
+};
+
 searchForm = document.querySelector(".search-form");
 
 document.querySelector("#search-btn").onclick = () => {
