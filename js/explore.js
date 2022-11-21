@@ -137,8 +137,8 @@ for (var i = 0; i < 300; i++) {
     itemList.push(new BookListElement(i, cover, `${courseName} ${edition}`, rating, `${firstInitial}. ${surname}`, isbn, edition, price_cond, courseListBooks));
 }
 localStorage.setItem('itemList', JSON.stringify(itemList));
-localStorage.setItem('wishList', JSON.stringify(wishList));
-localStorage.setItem('cartList', JSON.stringify(cartList));
+// localStorage.setItem('wishList', JSON.stringify(wishList));
+// localStorage.setItem('cartList', JSON.stringify(cartList));
 // console.log(JSON.parse(localStorage.getItem('itemList')));
 
 function getHTMLEmptyList() {
@@ -294,6 +294,7 @@ window.addEventListener('load', function (e) {
 });
 
 $(document).ready(function () {
+    cartList = JSON.parse(localStorage.getItem('cartList'))??[];
     searchString = localStorage.getItem('searchString') ?? "";
     for (var i = 0; i < itemList.length; i++) {
         $("#itemTemplate").append(itemList[i].getHTML());
