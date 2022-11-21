@@ -1,0 +1,9 @@
+body {
+    background-color: rgb(126, 172, 129);
+}
+
+.form-row{
+    display:flex; 
+    justify-content: space-between;
+    align-items: center;
+}
