@@ -22,7 +22,7 @@ var cartList = [];
 }())
 
 window.addEventListener('load', function (e) {
-  cartList = JSON.parse(localStorage.getItem('searchString')) ?? [];
+  cartList = JSON.parse(localStorage.getItem('cartList')) ?? [];
 });
 
 function addCheckoutItems() {
