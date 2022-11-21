@@ -213,10 +213,10 @@ function updateItemListingSortedByRating(direction, minRating, numOfItems) {
                 e.stopPropagation();
             });
             $(`#book-list-element-${revisedItemList[i].id}`).click(function (e){
-                // console.log(JSON.stringify(revisedItemList[i]))
                 
                 localStorage.setItem("itemDetails", JSON.stringify(revisedItemList[index]))
                 window.location.href = 'itemDetails.html';
+                
             })
         } else { break; }
     }

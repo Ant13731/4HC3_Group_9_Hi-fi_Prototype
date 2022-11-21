@@ -31,6 +31,7 @@ window.onload = ( () => {
 });
 
 $(document).ready(function() {
+    console.log(item)
     $("#item-container").append(getHTML());
     $(`#cartID`).click(function (e) {
         if (!cartList.includes(item)) {
@@ -56,6 +57,7 @@ $(document).ready(function() {
     });
 });
 function getHTML(){
+    // console.log(item)
     if (item == undefined || item.courseList == undefined)
     {
         item = fakeBook;
