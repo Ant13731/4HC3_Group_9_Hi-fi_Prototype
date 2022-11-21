@@ -2,10 +2,30 @@
 var item;
 var cartList = [];
 var wishList = [];
+class PriceCondElement {
+    constructor(price, condition) {
+        this.price = price;
+        this.condition = condition;
+    }
+}
+class BookListElement {
+    constructor(private_id, image, title, rating, author, isbn, edition, price_cond, courseList) {
+        this.author = author;
+        this.title = title;
+        this.image = image;
+        this.rating = rating;
+        this.isbn = isbn;
+        this.edition = edition;
+        this.price_cond = price_cond;
+        this.courseList = courseList;
+        this.id = private_id;
+    }
+}
+fakeBook = new BookListElement(-1, "../image/mathsBookResize.jpg", "Introduction to Probability", 5, "Dr. B Chopra", "01234567890", 2, [new PriceCondElement(100.00, "Excellent")], ["STATS 2D03"] )
 
 
 window.onload = ( () => {
-    item =  JSON.parse( localStorage.getItem("itemDetails"));
+    item =  JSON.parse( localStorage.getItem("itemDetails")) ?? fakeBook;
     cartList = JSON.parse(localStorage.getItem('cartList')) ?? [];
     wishList = JSON.parse(localStorage.getItem('wishList')) ?? [];
 });
@@ -31,6 +51,10 @@ $(document).ready(function() {
     });
 });
 function getHTML(item){
+    if (item == undefined || item.courseList == undefined)
+    {
+        item = fakeBook;
+    }
     var courseListHTML = "";
     for (var i = 0; i < item.courseList.length; i++) {
         courseListHTML += `<li>${item.courseList[i]}</li>\n`;
