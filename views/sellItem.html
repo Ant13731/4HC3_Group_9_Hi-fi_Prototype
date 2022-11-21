@@ -5,7 +5,7 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Complete Responsive Online Boot Store Website Design Tutorial</title>
+		<title>Sell Your Item!</title>
 
 		<link
 			rel="stylesheet"
@@ -123,24 +123,25 @@
     </div>
 
 <!-- *****************   START OF SELL ITEMS ******************* -->
-    <div class="sellItemsForm">
+    <div class="container">
 
+       <h4 class="mb-3" >Sell your items here</h3>
         <form>
-            <h3>Sell your items here</h3>
+            <div class="row">
+                <!-- title name -->
+                <div class="col-md-6 mb-3">
+                    <label for="title">Email address</label>
+                    <input type="text" class="form-control" id="inputTitle" aria-describedby="titleHelp" placeholder="Enter Title of item">
+                </div>
+                <!-- author name -->
+                <div class="col-md-6 mb-3">
+                    <label for="author">Author</label>
+                    <input type="text" class="form-control" id="authorTitle" aria-describedby="authorHelp" placeholder="Enter name of the author">
+                </div>
 
-            <!-- title name -->
-            <div class="title">
-                <label for="ItemTitle">Item Title</label>
-                <input
-                    type="Text"
-                    class="form-control"
-                    placeholder="Item to sell"
-                    id="ItemTitle"
-                />
             </div>
-
             <!-- category selector -->
-            <div class="category"  >
+            <div class="form-group"  >
                 <label for="category">Which category is this item from</label>
                 <select name="Category" id="category">  
                     <option value="book">Book</option>
@@ -155,11 +156,7 @@
                 </div>
             </div>
             
-            <!-- author name -->
-            <div class="Author">
-                <span>Author</span>
-                <input type="Text" class="box" placeholder="enter the author of the book" id=""/>
-            </div>
+           
 
             <!-- Edition -->
             <div class="edition">
