@@ -41,25 +41,25 @@
                         <li><a href="explore.html">Explore</a></li>
                         <li><a href="accountDetails.html">Account </a></li>
                         <li><a href="cart.html">Cart </a></li>
-                        <li><a href="../index.html#Contact">Contact</a></li>
+                        <li><a href="#">Contact</a></li>
                     </div>
                 </div>
             </div>
         </nav></div>
-        <button class="btn" style="position:absolute;left:10rem;">Register</button>
+        <button onclick="location.href='createAccount.html'" class="btn" style="position:absolute;left:10rem;">Register</button>
         <a href="../index.html" class="logo main-logo"><i class="fas fa-book"></i> Bookstore</a>
 
         <div class="icons">
             <div id="search-btn" class="fas fa-search"></div>
-            <button class="btn hdr-btn">
+            <button onclick="location.href='cart.html'" class="btn hdr-btn">
                 Cart <a href="cart.html" class="fas fa-shopping-cart"></a>
             </button>
-            <button class="btn hdr-btn">
+            <button onclick="location.href='sellItem.html'" class="btn hdr-btn">
                 SELL <a href="sellItem.html" class="fas fa-dollar-sign"></a>
             </button>
-            <button class="btn hdr-btn">
+            <button class="btn hdr-btn" id="login-btn">
                 Sign In
-                <div id="login-btn" class="fas fa-user"></div>
+                <div class="fas fa-user"></div>
             </button>
             <select class="btn hdr-btn">
                 <option value="">English</option>

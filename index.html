@@ -53,7 +53,7 @@
 						</div>
 					</nav>
 				</div>
-				<button class="btn" style="position: absolute; left: 10rem">
+				<button onclick="location.href='views/createAccount.html'" class="btn" style="position: absolute; left: 10rem">
 					Register
 				</button>
 				<a href="#" class="logo main-logo"
@@ -62,16 +62,15 @@
 
 				<div class="icons">
 					<div id="search-btn" class="fas fa-search"></div>
-					<!-- <a href="#" class="fas fa-heart"></a> -->
-					<button class="btn hdr-btn">
-						Cart <a href="cart.html" class="fas fa-shopping-cart"></a>
+					<button onclick="location.href='views/cart.html'" class="btn hdr-btn">
+						Cart <a href="views/cart.html" class="fas fa-shopping-cart"></a>
 					</button>
-					<button class="btn hdr-btn">
+					<button onclick="location.href='views/sellItem.html'"class="btn hdr-btn">
 						SELL <a href="views/sellItem.html" class="fas fa-dollar-sign"></a>
 					</button>
-					<button class="btn hdr-btn">
+					<button class="btn hdr-btn" id="login-btn">
 						Sign In
-						<div id="login-btn" class="fas fa-user"></div>
+						<div class="fas fa-user"></div>
 					</button>
 					<select class="btn hdr-btn">
 						<option value="">English</option>
