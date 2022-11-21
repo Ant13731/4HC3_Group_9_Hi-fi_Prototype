@@ -31,7 +31,7 @@ window.onload = ( () => {
 });
 
 $(document).ready(function() {
-    $("#item-container").append(getHTML(item));
+    $("#item-container").append(getHTML());
     $(`#cartID`).click(function (e) {
         if (!cartList.includes(item)) {
             cartList.push(item);
@@ -47,10 +47,15 @@ $(document).ready(function() {
         }
     });
     $(`#checkoutID`).click(function (e) {
+        if (!cartList.includes(item)) {
+            cartList.push(item);
+            localStorage.setItem('cartList', JSON.stringify(cartList));
+            console.log(cartList)
+        }
         window.location.href = 'checkout.html';
     });
 });
-function getHTML(item){
+function getHTML(){
     if (item == undefined || item.courseList == undefined)
     {
         item = fakeBook;

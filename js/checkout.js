@@ -45,5 +45,6 @@ function addCheckoutItems() {
 }
 
 $(document).ready(function () {
+  cartList = JSON.parse(localStorage.getItem('cartList')) ?? [];
   addCheckoutItems();
 });
