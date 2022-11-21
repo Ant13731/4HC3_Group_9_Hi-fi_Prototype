@@ -288,6 +288,7 @@ var showRating = 0;
 var showRatingDirection = DirectionEnum.NONE;
 var numOfItems = 50;
 
+//This and window.onload dont work - put all of this content in the document ready function.
 window.addEventListener('load', function (e) {
     searchString = localStorage.getItem('searchString') ?? "";
 });
