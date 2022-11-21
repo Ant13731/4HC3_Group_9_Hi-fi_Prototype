@@ -32,48 +32,52 @@
 		<header class="header">
 			<div class="header-1">
 				<div class="nvbr">
-				<nav>
-					<div class="navbar">
-						<div class="container nav-container">
-							<input class="checkbox" type="checkbox" name="" id="" />
-							<div class="hamburger-lines">
-								<span class="line line1"></span>
-								<span class="line line2"></span>
-								<span class="line line3"></span>
-							</div>
-							
-							<div class="menu-items">
-								<li><a href="#">Home</a></li>
-								<li><a href="views/explore.html">Explore</a></li>
-								<li><a href="views/accountDetails.html">Account </a></li>
-								<li><a href="views/cart.html">Cart </a></li>
-								<li><a href="#">Contact</a></li>
+					<nav>
+						<div class="navbar">
+							<div class="container nav-container">
+								<input class="checkbox" type="checkbox" name="" id="" />
+								<div class="hamburger-lines">
+									<span class="line line1"></span>
+									<span class="line line2"></span>
+									<span class="line line3"></span>
+								</div>
+
+								<div class="menu-items">
+									<li><a href="#">Home</a></li>
+									<li><a href="views/explore.html">Explore</a></li>
+									<li><a href="views/accountDetails.html">Account </a></li>
+									<li><a href="views/cart.html">Cart </a></li>
+									<li><a href="#contact">Contact</a></li>
+								</div>
 							</div>
 						</div>
-					</div>
-				</nav></div>
-				<button class="btn" style="position:absolute;left:10rem;">Register</button>
-				<a href="#" class="logo main-logo"><i class="fas fa-book"></i> Bookstore</a>
+					</nav>
+				</div>
+				<button onclick="location.href='views/createAccount.html'" class="btn" style="position: absolute; left: 10rem">
+					Register
+				</button>
+				<a href="#" class="logo main-logo"
+					><i class="fas fa-book"></i> Bookstore</a
+				>
 
 				<div class="icons">
 					<div id="search-btn" class="fas fa-search"></div>
-					<!-- <a href="#" class="fas fa-heart"></a> -->
-					<button class="btn hdr-btn">
-						Cart <a href="cart.html" class="fas fa-shopping-cart"></a>
+					<button onclick="location.href='views/cart.html'" class="btn hdr-btn">
+						Cart <a href="views/cart.html" class="fas fa-shopping-cart"></a>
 					</button>
-					<button class="btn hdr-btn">
+					<button onclick="location.href='views/sellItem.html'"class="btn hdr-btn">
 						SELL <a href="views/sellItem.html" class="fas fa-dollar-sign"></a>
 					</button>
-					<button class="btn hdr-btn">
+					<button class="btn hdr-btn" id="login-btn">
 						Sign In
-						<div id="login-btn" class="fas fa-user"></div>
+						<div class="fas fa-user"></div>
 					</button>
 					<select class="btn hdr-btn">
 						<option value="">English</option>
 						<option value="dog">French</option>
 						<option value="cat">Spanish</option>
 						<option value="hamster">German</option>
-						<option value="parrot">Portugese</option>
+						<option value="parrot">Portuguese</option>
 						<option value="spider">Russian</option>
 						<option value="goldfish">Persian</option>
 					</select>
@@ -91,9 +95,6 @@
 					<label for="search-box" class="fas fa-search"></label>
 				</form>
 			</div>
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
 
 			<div class="header-2">
 				<!-- <nav class="navbar">
@@ -104,9 +105,7 @@
 					<a href="views/createAccount.html">Account</a>
 				</nav> -->
 			</div>
-=======
->>>>>>> main
->>>>>>> 8a930cade02a2053559b9f1c681a84f9ad7531e5
+
 		</header>
 
 		<!-- header section ends -->
@@ -150,20 +149,14 @@
 				</div>
 				<input type="submit" value="sign in" class="btn" />
 				<p>forget password ? <a href="#">click here</a></p>
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
+
 				<p>don't have an account ? <a href="views/createAccount.html">create one</a></p>
-=======
->>>>>>> 8a930cade02a2053559b9f1c681a84f9ad7531e5
+\
 				<p>
 					don't have an account ?
 					<a href="views/createAccount.html">create one</a>
 				</p>
-<<<<<<< HEAD
-=======
->>>>>>> main
->>>>>>> 8a930cade02a2053559b9f1c681a84f9ad7531e5
+
 			</form>
 		</div>
 
@@ -187,7 +180,7 @@
 					1AA3, 1LT3, 1NN3, 1XX3, 1ZB3, 1ZZ5 or ISCI 1A24 A/B Not open to
 					students with credit or registration in PSYCH 2RA3
 				</p>
-				<a href="#" class="btn">Buy Now</a>
+				<a href="#" class="btn" id="buy-item-now">Buy Now</a>
 			</div>
 		</section>
 
@@ -414,7 +407,7 @@
 					<!-- <a href="#"> <i class="fas fa-arrow-right"></i> our serivces </a> -->
 				</div>
 
-				<div class="box">
+				<div id="contact" class="box">
 					<h3>contact info</h3>
 					<a href="#"> <i class="fas fa-phone"></i> +123-456-7890 </a>
 					<a href="#"> <i class="fas fa-phone"></i> +123-456-7890 </a>
