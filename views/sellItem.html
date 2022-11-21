@@ -130,20 +130,20 @@
             <div class="row">
                 <!-- title name -->
                 <div class="col-md-6 mb-3">
-                    <label for="title">Email address</label>
-                    <input type="text" class="form-control" id="inputTitle" aria-describedby="titleHelp" placeholder="Enter Title of item">
+                    <label for="title" class="format">Title</label>
+                    <input type="text" class="form-control border" id="inputTitle" placeholder="Enter Title of item">
                 </div>
                 <!-- author name -->
                 <div class="col-md-6 mb-3">
-                    <label for="author">Author</label>
-                    <input type="text" class="form-control" id="authorTitle" aria-describedby="authorHelp" placeholder="Enter name of the author">
+                    <label for="author" class="format" >Author</label>
+                    <input type="text" class="form-control border" id="inputAuthor" placeholder="Enter name of the author">
                 </div>
 
             </div>
             <!-- category selector -->
-            <div class="form-group"  >
-                <label for="category">Which category is this item from</label>
-                <select name="Category" id="category">  
+            <div class="form-group "  >
+                <label for="category" class="format">Which category is this item from</label>
+                <select class="edit border" name="Category" id="category">  
                     <option value="book">Book</option>
                     <option value="clothing">Clothing</option>
                     <option value="tool">Tool</option>
@@ -151,7 +151,7 @@
                     <option value="other">other</option>
                 </select>
                 <div class="other" style="display: inline;">
-                    <label id="other">Other: </span>
+                    <label id="other" class="format">Other: </span>
                     <input type="text" class="form-control" name="other" id="other" placeholder="other"/>
                 </div>
             </div>
@@ -159,65 +159,74 @@
            
 
             <!-- Edition -->
-            <div class="edition">
-                <span>Edition</span>
+            <div class="edition format">
+                <label for="edition" class="format">Edition</label>
                 <input
                     type="Text"
-                    name=""
-                    class="box"
-                    placeholder="enter the edition of the book"
-                    id=""
+                    class="form-control border"
+                    placeholder="enter the edition"
+                    id="edition"
                 />
             </div>
-
-            <div class="ISBN">
-                <span>ISBN</span>
+            
+            <!-- ISBN -->
+            <div class="ISBN format">
+                <label for="isbn" class="format">Price</label>
                 <input
                     type="number"
-                    name=""
-                    class="box"
-                    placeholder="enter the ISBN of the book"
-                    id=""
+                    class="form-control border"
+                    placeholder="enter the ISBN"
+                    id="isbn"
                 />
             </div>
 
+
+            <!-- price -->
             <div class="price">
-                <span>Price</span>
+                <label for="price" class="format">Price</label>
                 <input
                     type="number"
-                    name=""
-                    class="box"
-                    placeholder="enter the price of the book"
-                    id=""
+                    class="form-control border"
+                    placeholder="enter the price"
+                    id="price"
                 />
             </div>
 
+
+            <!-- description -->
             <div class="description">
-                <span>Description</span>
-                <input
+                <label for="desc" class="format">Description</label>
+                <textarea
                     type="Text" style="height: 200px;"
-                    name=""
-                    class="box"
-                    placeholder="enter the description of the book"
-                    id="description"
-                />
+                    class="form-control border"
+                    placeholder="enter the description"
+                    id="desc"
+                ></textarea>
             </div>
 
+            <!-- date of purchase -->
             <div class="DOP">   
-                <span>Date of Purchase</span>
+                <label for="date" class="format">Date of Purchase</label>
                 <input
                     type="date"
-                    name=""
-                    class="box"
+                    class="form-control"
                     placeholder="enter the date of purchase of the book"
                     id="date"
                 />
             </div>
 
+            <!-- add images -->
+            <div class="form-group">
+                <label for="img" class="format">Example file input</label>
+                <input type="file" class="form-control-file" id="img">
+              </div>
             
+
+            <!-- submit -->
             <input type="submit" value="bookSubmit" class="btn" />
             <p>Don't have an account? <a href="createAccount.html">create one</a></p>
         </form>
+    </div>
     </div>
 
     <!-- *****************   START OF FOOTER ******************* -->
