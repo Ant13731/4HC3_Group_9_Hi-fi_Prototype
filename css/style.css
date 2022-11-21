@@ -19,7 +19,7 @@
     box-sizing: border-box;
     outline: none; border:none;
     text-decoration: none;
-    text-transform: capitalize;
+    /* text-transform: capitalize; */
     transition:all .2s linear;
     transition:width none;
 }
@@ -64,7 +64,7 @@ body.homepage {
   
 .navbar {
     width: 100%;
-    box-shadow: 0 1px 4px rgb(146 161 176 / 15%);
+    /* box-shadow: 0 1px 4px rgb(146 161 176 / 15%); */
   }
   
 .nav-container {
@@ -149,7 +149,7 @@ body.homepage {
   
 .navbar .menu-items {
     padding-top: 120px;
-    box-shadow: inset 0 0 2000px rgba(245, 247, 245, 0.5);
+    /* box-shadow: inset 0 0 2000px rgba(245, 247, 245, 0.5); */
     height: 100vh;
     width: 100%;
     transform: translate(-150%);
@@ -161,16 +161,30 @@ body.homepage {
     text-align: center;
   }
   
+  .main-logo {
+    padding:1rem;
+    height:5rem;
+    transform: scale(1.5);
+    /* width: auto!important; */
+    /* font-size:xx-large; */
+  }
 .navbar .menu-items li {
     margin-bottom: 1.2rem;
     font-size: 1.5rem;
     font-weight: 500;
   }
+
+  /* .hdr-btn{
+    height:5rem;
+    top:0!important;
+    padding: none!important;
+    margin:none!important;
+  } */
   
 .logo {
     position: absolute;
     top: 5px;
-    right: 15px;
+    left: 50%;
     font-size: 1.2rem;
     color: #0e2431;
   }
@@ -252,7 +266,7 @@ body.homepage {
     font-size: 2.5rem;
     font-weight: bolder;
     color:var(--black);
-    margin-right:130rem; 
+    /* margin-right:130rem;  */
 }
 
 .header .header-1 .logo i{
@@ -323,6 +337,10 @@ body.homepage {
 
 .header .header-2 .navbar{
     text-align: center;
+}
+
+.nvbr {
+    padding-top: 2rem;
 }
 
 .header .header-2 .navbar a{

@@ -1,3 +1,4 @@
+var searchString = "";
 
 // Turn a rating between 0 and 5 into a series of star icons (HTML string format)
 // Needs font awesome enabled on the HTML page to run
@@ -140,6 +141,16 @@ localStorage.setItem('wishList', JSON.stringify(wishList));
 localStorage.setItem('cartList', JSON.stringify(cartList));
 // console.log(JSON.parse(localStorage.getItem('itemList')));
 
+function getHTMLEmptyList() {
+    return `<div class="col-12 py-4">
+                <div class="cart-wish-list-empty-wrapper" style="height:auto;">
+                <div class="cart-wish-list-empty" style="height:auto;">
+                <p>Uh oh, looks like our search came up empty. Feel free to <a href="explore.html">explore our selection</a> of books and find something that suits your taste. In the meantime, we'll wait right here.</p>
+            </div>
+            </div>
+            </div>`;
+}
+
 //used to sort objects with the sorter
 const DirectionEnum = Object.freeze({
     ASCENDING: 1,
@@ -153,6 +164,11 @@ const DirectionEnum = Object.freeze({
 function updateItemListingSortedByRating(direction, minRating, numOfItems) {
     $("#itemTemplate").empty();
     revisedItemList = itemList.filter(val => val.rating >= minRating);
+
+    if(searchString != "") {
+        revisedItemList = revisedItemList.filter(elem => elem.title.toLowerCase().includes(searchString.toLowerCase()));
+    }
+
     if (direction !== DirectionEnum.NONE) {
         revisedItemList.sort((a, b) => {
             if (a.rating < b.rating) { return -1; }
@@ -163,6 +179,7 @@ function updateItemListingSortedByRating(direction, minRating, numOfItems) {
             revisedItemList.reverse();
         }
     }
+    
     for (var i = 0; i < revisedItemList.length; i++) {
         if (i < numOfItems) {
             //Need this constant or else i changes value inside the function!
@@ -203,6 +220,11 @@ function updateItemListingSortedByRating(direction, minRating, numOfItems) {
             })
         } else { break; }
     }
+
+    if (revisedItemList.length === 0) {
+        $("#itemTemplate").append(getHTMLEmptyList());
+    }
+
     //used to get correct hover behaviour (prevent the hover object
     //from moving around when trying to interact with the hovered object)
     var prevMouseEvent;
@@ -266,7 +288,12 @@ var showRating = 0;
 var showRatingDirection = DirectionEnum.NONE;
 var numOfItems = 50;
 
+window.addEventListener('load', function (e) {
+    searchString = localStorage.getItem('searchString') ?? "";
+});
+
 $(document).ready(function () {
+    searchString = localStorage.getItem('searchString') ?? "";
     for (var i = 0; i < itemList.length; i++) {
         $("#itemTemplate").append(itemList[i].getHTML());
     }

@@ -31,6 +31,7 @@
 
 		<header class="header">
 			<div class="header-1">
+				<div class="nvbr">
 				<nav>
 					<div class="navbar">
 						<div class="container nav-container">
@@ -40,9 +41,7 @@
 								<span class="line line2"></span>
 								<span class="line line3"></span>
 							</div>
-							<div class="logo">
-								<h1>Navbar</h1>
-							</div>
+							
 							<div class="menu-items">
 								<li><a href="#">Home</a></li>
 								<li><a href="views/explore.html">Explore</a></li>
@@ -52,24 +51,24 @@
 							</div>
 						</div>
 					</div>
-				</nav>
-				<button class="btn" style="margin-right: 100rem">Register</button>
-				<a href="#" class="logo"> <i class="fas fa-book"></i> BookSTore </a>
+				</nav></div>
+				<button class="btn" style="position:absolute;left:10rem;">Register</button>
+				<a href="#" class="logo main-logo"><i class="fas fa-book"></i> Bookstore</a>
 
 				<div class="icons">
 					<div id="search-btn" class="fas fa-search"></div>
 					<!-- <a href="#" class="fas fa-heart"></a> -->
-					<button class="btn">
-						Cart <a href="#" class="fas fa-shopping-cart"></a>
+					<button class="btn hdr-btn">
+						Cart <a href="cart.html" class="fas fa-shopping-cart"></a>
 					</button>
-					<button class="btn">
+					<button class="btn hdr-btn">
 						SELL <a href="views/sellItem.html" class="fas fa-dollar-sign"></a>
 					</button>
-					<button class="btn">
+					<button class="btn hdr-btn">
 						Sign In
 						<div id="login-btn" class="fas fa-user"></div>
 					</button>
-					<select class="btn">
+					<select class="btn hdr-btn">
 						<option value="">English</option>
 						<option value="dog">French</option>
 						<option value="cat">Spanish</option>
@@ -135,7 +134,10 @@
 				</div>
 				<input type="submit" value="sign in" class="btn" />
 				<p>forget password ? <a href="#">click here</a></p>
-				<p>don't have an account ? <a href="views/createAccount.html">create one</a></p>
+				<p>
+					don't have an account ?
+					<a href="views/createAccount.html">create one</a>
+				</p>
 			</form>
 		</div>
 
@@ -415,10 +417,6 @@
 		<!-- JavaScript Bundle with Popper -->
 
 		<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
-
-		<!-- JavaScript Bundle with Popper -->
-
-		<!-- custom js file link  -->
 		<script src="js/script.js"></script>
 	</body>
 </html>

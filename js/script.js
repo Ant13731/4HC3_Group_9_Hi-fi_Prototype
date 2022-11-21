@@ -1,3 +1,13 @@
+document.getElementById("search-box").addEventListener("keypress", function(e) {
+
+	if(e.key === "Enter") {
+		e.preventDefault();
+		localStorage.setItem('searchString', document.getElementById("search-box").value);
+		window.location.href = "views/explore.html";
+	}
+
+});
+
 searchForm = document.querySelector(".search-form");
 
 document.querySelector("#search-btn").onclick = () => {
