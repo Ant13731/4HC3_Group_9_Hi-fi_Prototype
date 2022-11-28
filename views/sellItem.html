@@ -31,10 +31,11 @@
             crossorigin="anonymous">
 
         <!-- custom css sell file link  -->
-        
+        <link rel="stylesheet" href="../css/sell.css" class="rel">
 
 		<!-- custom css file link  -->
 		<link rel="stylesheet" href="../css/style.css" />
+        
         
 	</head>
     <body>
@@ -196,9 +197,9 @@
             
 
             <!-- submit -->
-            <button onclick="window.location.href='../index.html'" class="btn">Submit</button>
-            <button onclick="window.location.href='../index.html'" class="btn">Save for later</button>
-            <button onclick="window.location.href='../index.html'" class="btn">Remove</button>
+            <button onclick="submit()" class="btn submit">Submit</button>
+            <button onclick="saveForLater()" class="btn saveForLater">Save for later</button>
+            <button onclick="remove()" class="btn">Remove</button>
             <!-- <a href="../index.html"><input type="submit" value="Submit" class="btn" /></a> -->
             <p style="padding:1rem;font-size:medium">Don't have an account? <a href="createAccount.html">create one</a></p>
         </form>
@@ -207,6 +208,7 @@
 
 
 
+    <script type= "text/javascript" src="../js/sell.js"></script>
 
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
